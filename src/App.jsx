@@ -12,7 +12,7 @@ import LoginEmail from './pages/LoginEmail';
 import LoginOtp from './pages/LoginOtp';
 import ForgotPassword from './pages/ForgotPassword';
 import Orders from './pages/Orders';
-import Address from './pages/Address';
+import Address from './pages/Address'; 
 import Payment from './pages/Payment';
 import Product from './pages/Product'
 import PersonalInfo from './pages/PersonalInfo';
