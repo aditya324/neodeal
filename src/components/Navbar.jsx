@@ -56,7 +56,7 @@ function Navbar() {
                   placeholder="Search Products"
                 />
 
-                <Link>
+                <Link to="/wishlist">
                   <div className="bg-[#37317C] h-9 w-9 rounded-full flex items-center justify-center">
                     <GoHeartFill className="text-white" />
                   </div>

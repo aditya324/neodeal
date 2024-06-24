@@ -6,6 +6,7 @@ import laptop from "../assets/laptop.png";
 import sound from "../assets/sound.png";
 import star from "../assets/star.png";
 import { RiArrowDropLeftLine, RiArrowDropRightLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 
 const categories = [
   "Electronics",
@@ -241,7 +242,8 @@ const Categories = () => {
               {products
                 .filter((product) => product.category === category)
                 .map((product, index) => (
-                  <div
+                  <Link
+                  to='/productPage'
                     key={index}
                     className="bg-white p-4 rounded-3xl shadow-lg"
                   >
@@ -273,7 +275,7 @@ const Categories = () => {
                         Get Now
                       </button>
                     </div>
-                  </div>
+                  </Link>
                 ))}
             </div>
           ))}

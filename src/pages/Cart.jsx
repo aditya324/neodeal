@@ -6,6 +6,7 @@ import { FaShoppingCart } from "react-icons/fa";
 import { FaAddressCard } from "react-icons/fa6";
 import { MdPayment } from "react-icons/md";
 import cross from "../assets/cross.png";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const items = [
@@ -57,7 +58,9 @@ const Cart = () => {
           <h1>
             Delivering To <span className="text-[#5356FB]">580030</span>
           </h1>
-          <p className="text-[#5356FB] cursor-pointer">Edit</p>
+          <Link to="/address">
+            <p className="text-[#5356FB] cursor-pointer">Edit</p>
+          </Link>
         </div>
         <div className="flex flex-col lg:flex-row bg-[#DEDFF3]">
           <div>

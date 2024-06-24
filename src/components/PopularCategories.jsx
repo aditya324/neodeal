@@ -5,6 +5,7 @@ import plane from "../assets/plane.png";
 import mask from "../assets/mask.png";
 import triangle from "../assets/triangle.png";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 const PopularCategories = () => {
   const categories = [
@@ -27,7 +28,8 @@ const PopularCategories = () => {
         <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:ml-20 ml-20  lg:mt-0 mt-5 md:ml-28">
           {categories.map((category) => {
             return (
-              <div
+              <Link
+                to="/categories"
                 key={category.id}
                 className="bg-white w-52 flex p-3 justify-start items-center rounded-xl relative  "
               >
@@ -42,13 +44,11 @@ const PopularCategories = () => {
                   <h2>{category.name}</h2>
                 </div>
                 <div className=" ">
-
-                 
                   {/* <div style={{backgroundImage:`url(${triangle})`}} className="">
                   <IoIosArrowRoundForward />
                   </div> */}
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>
