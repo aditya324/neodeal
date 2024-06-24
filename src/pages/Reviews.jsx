@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import phone from "../assets/phone1.png";
 import ReactStars from "react-rating-stars-component";
+import { FcOldTimeCamera } from "react-icons/fc";
 
 const Orders = () => {
   const [images, setImages] = useState([]);
@@ -138,10 +139,16 @@ const Orders = () => {
 
           <label
             htmlFor="upload"
-            className="cursor-pointer text-blue-500 block mt-3 text-blue"
+            className="cursor-pointer text-blue-500 mt-3 text-blue flex"
           >
+            <FcOldTimeCamera className="text-2xl mr-2" />
             Add Photo/videos
           </label>
+        </div>
+        <div className="flex justify-center items-center">
+          <button className="w-56 h-9 mt-5 rounded-3xl border border-purple flex items-center justify-center hover:text-white text-purple text-sm hover:bg-Btn-bg font-semibold mb-10 text-center">
+            Submit
+          </button>
         </div>
       </div>
     </>

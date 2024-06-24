@@ -147,10 +147,10 @@ const ProductPage = () => {
             Specification
           </h2>
         </div>
-        <div className="mt-3 rounded-3xl bg-gray-100 h-auto p-10">
-          <div className="p-2 ">
+        <div className="mt-3 rounded-3xl bg-gray-100 h-auto p-5">
+          <div className="p-1 ">
             {openDescription && (
-              <ul className="list-disc pl-5">
+              <ul className="list-disc pl-4">
                 <li>15.40 cm (6.1-inch) Super Retina XDR display </li>
                 <li>Advanced camera system for better photos in any light </li>
                 <li> Cinematic mode now in 4K Dolby Vision up to 30 fps </li>
@@ -206,10 +206,10 @@ const ProductPage = () => {
           </div>
           {/*  -------------------- review images ----------------------- */}
           <div className="mt-3 flex gap-4 sm:flex-row flex-wrap sm:gap-7">
-            <img src={review} alt="review" className="h-40 w-36 rounded-lg " />
-            <img src={review1} alt="review" className="h-40 w-36 rounded-lg" />
-            <img src={review2} alt="review" className="h-40 w-36 rounded-lg" />
-            <img src={review3} alt="review" className="h-40 w-36 rounded-lg" />
+            <img src={review} alt="review" className="h-40 w-36 object-cover rounded-lg " />
+            <img src={review1} alt="review" className="h-40 w-36 object-cover rounded-lg" />
+            <img src={review2} alt="review" className="h-40 w-36 object-cover rounded-lg" />
+            <img src={review3} alt="review" className="h-40 w-36 object-cover rounded-lg" />
           </div>
 
           <div className="mt-3">
