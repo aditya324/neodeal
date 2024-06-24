@@ -10,6 +10,8 @@ import { RiDiscountPercentFill } from "react-icons/ri";
 import { HiViewGrid } from "react-icons/hi";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
+import { FaBoxOpen } from "react-icons/fa";
+import Logout from "../assets/Logout.png";
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -28,12 +30,12 @@ function Navbar() {
       <div className=" ">
         <nav className=" border-gray-200 bg-black">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-            <a
-              href="#"
+            <Link
+              to="/"
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
               <img src={MainIcon} className="h-10" alt="MainIcon" />
-            </a>
+            </Link>
             <div className="flex items-center justify-between md:order-2">
               <button
                 type="button"
@@ -62,7 +64,7 @@ function Navbar() {
                   </div>
                 </Link>
 
-                <Link>
+                <Link to="/cart">
                   <div className="bg-[#37317C] h-9 w-9 rounded-full flex items-center justify-center">
                     <FaShoppingCart className="text-white" />
                   </div>
@@ -83,33 +85,72 @@ function Navbar() {
                     id="userProfile"
                     className={`z-10 ${
                       isUserDropdownOpen ? "block" : "hidden"
-                    } font-normal divide-y divide-gray-100 rounded-lg shadow w-44 absolute left-1/2 transform -translate-x-1/2 top-full -ml-4`}
+                    } font-normal divide-y divide-gray-100 rounded-md shadow w-44 absolute left-1/2 transform -translate-x-1/2 top-full -ml-14`}
                   >
                     <ul
-                      className="py-2 text-sm bg-white absolute p-8 rounded-xl font-semibold"
+                      className="py-2 text-sm bg-white absolute  rounded-xl  w-56"
                       aria-labelledby="dropdownLargeButton"
                     >
-                      <div className="flex justify-start items-center border-b-2 border-gray-500 h-10 text-lg w-full">
+                      <div className="flex p-7 justify-start items-center font-semibold border-b-2 border-gray-500 h-10 text-lg w-full">
                         My Profile
                       </div>
                       <li className="border-b ">
-                        <a
-                          href="#"
-                          className="flex items-center gap-2 px-4 py-2 border-b border-gray-300 hover:text-[#C342F9] "
+                        <Link
+                          to="/cart"
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-300 hover:text-[#C342F9] "
                         >
                           <div className="rounded-full p-3 bg-[#FEECFF] text-center">
-                            <FaShoppingCart className="text-[#5356FB]" />
+                            <FaShoppingCart
+                              className="text-[#5356FB]"
+                              size={20}
+                            />
                           </div>
-                          Cart
-                        </a>
+                          <p className="text-lg">Cart</p>
+                        </Link>
                       </li>
-                      <li className="border-b flex">
+
+                      <li className="border-b ">
+                        <Link
+                          to="/wishlist"
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-300 hover:text-[#C342F9] "
+                        >
+                          <div className="rounded-full p-3 bg-[#FEECFF] text-center">
+                            <GoHeartFill className="text-[#9747FF]" size={20} />
+                          </div>
+                          <p className="text-lg">Wishlist</p>
+                        </Link>
+                      </li>
+                      <li className="border-b ">
+                        <Link
+                          to="/orders"
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-300 hover:text-[#C342F9] "
+                        >
+                          <div className="rounded-full p-3 bg-[#EFFAFE] text-center">
+                            <FaBoxOpen className="text-[#3366FF]" size={20} />
+                          </div>
+                          <p className="text-lg">My Orders</p>
+                        </Link>
+                      </li>
+                      <li className="border-b ">
+                        <Link
+                          to="/profile"
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-300 hover:text-[#C342F9] "
+                        >
+                          <div className="rounded-full p-3 bg-[#EFFAFE] text-center">
+                            <FaUser className="text-[#5356FB]" size={20} />
+                          </div>
+                          <p className="text-lg">My Profile</p>
+                        </Link>
+                      </li>
+                      <li className="border-b ">
                         <a
                           href="#"
-                          className="block px-4 py-2 border-b border-gray-300 hover:text-[#C342F9]"
+                          className="flex items-center gap-4 px-4 py-2  hover:text-[#C342F9] "
                         >
-                          <GoHeartFill className="text-white" />
-                          Wishlist
+                          <div className="rounded-full p-2 bg-[#FDEFEF] text-center">
+                            <img src={Logout} />
+                          </div>
+                          <p className="text-lg">Log Out</p>
                         </a>
                       </li>
                     </ul>
@@ -171,23 +212,24 @@ function Navbar() {
                 />
               </div>
               <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-black  border-gray-700">
-                <li>
+                <li className="group hover:text-[#F8A926]">
                   <Link
                     to="/"
-                    className="py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500 flex gap-0"
+                    className="py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500 flex gap-0 group-hover:text-[#F8A926]"
                     aria-current="page"
                   >
                     <IoMdHome
-                      className=" hover:text-[#F8A926] text-white mr-1"
+                      className="text-white mr-1 group-hover:text-[#F8A926]"
                       size={25}
                     />
                     Home
                   </Link>
                 </li>
-                <li>
+
+                <li className="hover:text-[#F8A926]">
                   <Link
-                  to='/schemes'
-                    className="py-2 px-3 rounded md:p-0 text-white hover:bg-gray-700 hover:text-white flex gap-2"
+                    to="/schemes"
+                    className="py-2 px-3 rounded md:p-0 text-white  hover:text-[#F8A926] flex gap-2"
                   >
                     <RiDiscountPercentFill
                       className="hover:text-[#F8A926] "
@@ -196,7 +238,7 @@ function Navbar() {
                     Schemes
                   </Link>
                 </li>
-                <li className="flex justify-center items-center">
+                <li className="flex justify-center items-center hover:text-[#F8A926]">
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
