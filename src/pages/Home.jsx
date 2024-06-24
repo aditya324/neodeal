@@ -72,7 +72,7 @@ const Home = () => {
 <PurpleSlider/>
 
 
-<BestSellerCard name="Best Seller" style="font-bold text-[#374557] lg:ml-12 ml-5  mb-5 text-xl" />
+<BestSellerCard name="Best Seller" style="font-semibold text-[#374557] text-xl lg:ml-12 ml-5  mb-5 text-xl" />
 
 
 <PopularCategories/>

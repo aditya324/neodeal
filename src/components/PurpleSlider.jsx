@@ -18,17 +18,17 @@ const PurpleSlider = () => {
   );
     const Trending = [
   {
-    title: "Scheme Name 1",
+    title: "Scheme Name ",
     desc: "Lorem Ipsum has been the industry's dummy text to use as content.",
     bgimg: "https://picsum.photos/200/300",
   },
   {
-    title: "Scheme Name 2",
+    title: "Scheme Name ",
     desc: "Lorem Ipsum has been the industry's dummy text to use as content.",
     bgimg: "https://picsum.photos/200/300",
   },
   {
-    title: "Scheme Name 3",
+    title: "Scheme Name ",
     desc: "Lorem Ipsum has been the industry's dummy text to use as content.",
     bgimg: "https://picsum.photos/200/300",
   }
@@ -109,8 +109,8 @@ const PurpleSlider = () => {
     
   return (
     <div className="bg-custom-blue w-full h-80 p-4 overflow-x-hidden">
-    <p className="text-white relative top-12 left-8 font-semibold">All Live Schemes</p>
-    <div className="flex justify-end items-center gap-2 mb-4">
+    <p className="text-white relative top-12 left-10 text-xl mb-3 font-semibold">All Live Schemes</p>
+    <div className="flex justify-end items-center gap-2 mb-4 lg:mr-20">
       <button onClick={() => sliderRef.current.slickPrev()}>
         <div className="bg-[#5356FB] p-3 rounded-full">
           <IoIosArrowBack className="text-white" />
@@ -124,8 +124,8 @@ const PurpleSlider = () => {
     </div>
     <Slider ref={sliderRef} {...settings}>
     {Trending.map((trend, index) => (
-      <div key={index} className="mx-10">
-        <div className="flex bg-custom-card rounded-lg overflow-hidden h-40 px-4 lg:py-1" style={{ width: "20rem" }}>
+      <div key={index} className="mx-10 ">
+        <div className="flex bg-custom-card rounded-lg overflow-hidden h-40 px-4 lg:py-1" style={{ width: "21rem" }}>
           <div className="flex-1 p-4">
             <h1 className="text-xl font-bold text-white">{trend.title}</h1>
             <p className="mt-2 text-white text-base ">{trend.desc}</p>

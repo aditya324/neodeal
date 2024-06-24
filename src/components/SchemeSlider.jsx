@@ -274,7 +274,7 @@ const CustomArrow = ({ className, onClick, icon }) => (
   </button>
 );
 
-const BestSellerCard = ({name ,style}) => {
+const SchemeSlider = ({name ,style}) => {
   const sliderRef = React.useRef(null);
 
   const settings = {
@@ -314,9 +314,9 @@ const BestSellerCard = ({name ,style}) => {
 
   return (
     <div className='bg-[#DEDFF3] p-10'>
-      <div className="flex justify-between items-center mb-4 ">
+      <div className="flex justify-between items-center mb-4 lg:flex-row  flex-col md:flex-row   " >
         <p className={style}>{name}</p>
-        <div className="flex justify-end items-center gap-2 lg:mr-16">
+        <div className="flex justify-end items-center gap-2 lg:mr-28 lg:mt-0 md:mt-0 mt-5">
           <button onClick={() => sliderRef.current.slickPrev()}>
             <div className="bg-[#5356FB] p-3 rounded-full">
               <IoIosArrowBack className="text-white" />
@@ -329,7 +329,7 @@ const BestSellerCard = ({name ,style}) => {
           </button>
         </div>
       </div>
-      <Slider ref={sliderRef} {...settings} className="mt-5 lg:ml-10 ml-8 md:ml-20">
+      <Slider ref={sliderRef} {...settings} className="mt-5 lg:ml-10 ml-8 md:ml-20 lg:px-16">
         {Products.map((item, index) => (
           <div key={index}>
             <div className="bg-white p-2 rounded-2xl w-60 h-fit  mx-1">
@@ -371,4 +371,4 @@ const BestSellerCard = ({name ,style}) => {
   );
 };
 
-export default BestSellerCard;
+export default SchemeSlider;
