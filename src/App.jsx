@@ -14,6 +14,10 @@ import ForgotPassword from './pages/ForgotPassword';
 import Orders from './pages/Orders';
 import Address from './pages/Address';
 import Payment from './pages/Payment';
+import Product from './pages/Product'
+import PersonalInfo from './pages/PersonalInfo';
+import Reviews from './pages/Reviews'
+import YourScheme from './pages/YourScheme';
 
 function App() {
   return (
@@ -32,6 +36,10 @@ function App() {
           <Route path='orders' element={<Orders/>}/>
           <Route path='address' element={<Address/>}/>
           <Route path='payment' element={<Payment/>}/>
+          <Route path='productPage' element={<Product/>}/>
+          <Route path='personalInfo' element={<PersonalInfo/>}/>
+          <Route path='reviews' element={<Reviews/>}/>
+          <Route path='yourScheme' element={<YourScheme/>}/>
         </Route>
       </Routes>
     </Router>
