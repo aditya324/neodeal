@@ -8,7 +8,7 @@ const YourScheme = () => {
       <h2 className="font-semibold text-2xl leading-5 my-5">
         Your Scheme (Number){" "}
       </h2>
-      <div className="bg-[#EBE4FF] w-full p-5 rounded-2xl mt-3">
+      <div className="bg-[#EBE4FF] w-full p-5 rounded-2xl mt-5">
         <div className="flex justify-between">
           <div>
             <p className="font-semibold text-base">
@@ -46,7 +46,7 @@ const YourScheme = () => {
         </div>
       </div>
 
-      <div className="bg-[#EBE4FF] w-full p-5 rounded-2xl mt-3">
+      <div className="bg-[#EBE4FF] w-full p-5 rounded-2xl mt-5">
         <div className="flex justify-between">
           <div>
             <p className="font-semibold text-base">
@@ -83,7 +83,7 @@ const YourScheme = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#EBE4FF] w-full p-5 rounded-2xl mt-3">
+      <div className="bg-[#EBE4FF] w-full p-5 rounded-2xl mt-5">
         <div className="flex justify-between">
           <div>
             <p className="font-semibold text-base">
