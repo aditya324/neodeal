@@ -26,8 +26,8 @@ const SchemeCard = () => {
     <>
       <div>
         <div className="flex justify-start ml-20">
-          <p className="text-[#374557] font-semibold lg:ml-24 text-xl pt-4">
-            How Do Schemes Work
+          <p className="text-[#374557] font-bold lg:ml-20 text-xl pt-4">
+            How Do Schemes Work?
           </p>
         </div>
         <div className="bg-[#DEDFF3] w-full flex flex-wrap justify-center mt-8 px-4">

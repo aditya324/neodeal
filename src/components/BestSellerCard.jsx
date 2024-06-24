@@ -313,10 +313,10 @@ const BestSellerCard = ({name ,style}) => {
   };
 
   return (
-    <div className='bg-[#DEDFF3] p-10'>
+    <div className='bg-[#DEDFF3] py-10'>
       <div className="flex justify-between items-center mb-4 ">
         <p className={style}>{name}</p>
-        <div className="flex justify-end items-center gap-2 lg:mr-16">
+        <div className="flex justify-end items-center gap-2 lg:mr-20">
           <button onClick={() => sliderRef.current.slickPrev()}>
             <div className="bg-[#5356FB] p-3 rounded-full">
               <IoIosArrowBack className="text-white" />
@@ -329,44 +329,44 @@ const BestSellerCard = ({name ,style}) => {
           </button>
         </div>
       </div>
-      <Slider ref={sliderRef} {...settings} className="mt-5   ml-8 md:ml-20 ">
-        {Products.map((item, index) => (
-          <div key={index} className=''>
-            <div className="bg-white p-2 rounded-2xl w-60 h-fit  mx-1">
-              <div className="grid place-items-center">
-                <img
-                  src={item.bgimg}
-                  alt=""
-                  className="rounded-lg h-32 w-full object-cover"
-                />
-              </div>
-              <p className="my-2 grid">
-                <span className="text-gray-500">Category </span>
-                <span className="text-[#5356FB] whitespace-nowrap">
-                  {item.category}
-                </span>
-              </p>
-              <p className="text-lg font-semibold my-2">{item.pname}</p>
-              <div className="border border-gray-200 px-2 py-1 rounded-xl">
-                <p className="text-gray-500">Current Scheme</p>
-                <div className="flex justify-start items-center gap-2">
-                  <span className="text-[#5356FB] font-semibold">
-                    ${item.price}/-{" "}
-                  </span>
-                  <span className="text-[#EB5757] font-semibold line-through">
-                    $9200/-
-                  </span>
-                </div>
-              </div>
-              <div className="my-3">
-                <button className="bg-[#F539F8] text-white px-3 py-1 rounded-full">
-                  Get Now
-                </button>
-              </div>
-            </div>
+      <Slider ref={sliderRef} {...settings} className="ml-20 ">
+  {Products.map((item, index) => (
+    <div key={index} className=" ">
+      <div className="bg-white p-2 rounded-2xl w-60 h-fit">
+        <div className="grid place-items-center">
+          <img
+            src={item.bgimg}
+            alt=""
+            className="rounded-lg h-32 w-full object-cover"
+          />
+        </div>
+        <p className="my-2 grid">
+          <span className="text-gray-500">Category:<span className="text-[#5356FB] whitespace-nowrap">
+            {item.category}
+          </span></span>
+          
+        </p>
+        <p className="text-xl font-bold my-2">{item.pname}</p>
+        <div className="border border-gray-200 px-2 py-1 rounded-xl">
+          <p className="text-gray-500">Current Scheme</p>
+          <div className="flex justify-start items-center gap-2">
+            <span className="text-[#5356FB] font-semibold">
+              ${item.price}/-{" "}
+            </span>
+            <span className="text-[#EB5757] font-semibold line-through">
+              $9200/-
+            </span>
           </div>
-        ))}
-      </Slider>
+        </div>
+        <div className="my-3">
+          <button className="bg-[#F539F8] text-white px-3 py-1 rounded-full">
+            Get Now
+          </button>
+        </div>
+      </div>
+    </div>
+  ))}
+</Slider>
     </div>
   );
 };

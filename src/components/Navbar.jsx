@@ -62,7 +62,7 @@ function Navbar() {
                   </div>
                 </Link>
 
-                <Link>
+                <Link to="/cart">
                   <div className="bg-[#37317C] h-9 w-9 rounded-full flex items-center justify-center">
                     <FaShoppingCart className="text-white" />
                   </div>
@@ -94,7 +94,7 @@ function Navbar() {
                       </div>
                       <li className="border-b ">
                         <a
-                          href="#"
+                          href="cart"
                           className="flex items-center gap-2 px-4 py-2 border-b border-gray-300 hover:text-[#C342F9] "
                         >
                           <div className="rounded-full p-3 bg-[#FEECFF] text-center">
