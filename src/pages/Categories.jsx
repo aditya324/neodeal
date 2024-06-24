@@ -40,7 +40,7 @@ const products = [
     title: "Sound Systems",
     description: "Limited time deal",
     oldPrice: "₹ 2000/-",
-    newPrice: "₹ 1500/-",
+    newPrice: "₹ 15000/-",
     image: sound,
   },
   {
@@ -48,7 +48,7 @@ const products = [
     title: "Headphones",
     description: "Limited time deal",
     oldPrice: "₹ 2000/-",
-    newPrice: "₹ 1500/-",
+    newPrice: "₹ 15000/-",
     image: catc,
   },
   {
@@ -56,7 +56,7 @@ const products = [
     title: "Headphones",
     description: "Limited time deal",
     oldPrice: "₹ 2000/-",
-    newPrice: "₹ 1500/-",
+    newPrice: "₹ 15000/-",
     image: catc,
   },
   {
@@ -64,7 +64,7 @@ const products = [
     title: "Headphones",
     description: "Limited time deal",
     oldPrice: "₹ 2000/-",
-    newPrice: "₹ 1500/-",
+    newPrice: "₹ 15000/-",
     image: catc,
   },
   // Add more products here as needed
@@ -221,10 +221,10 @@ const Categories = () => {
               <li key={index}>
                 <button
                   onClick={() => handleToggle(category)}
-                  className={`text-lg font-semibold py-1 px-3 rounded-md ${
+                  className={`text-lg font-semibold py-1 px-3  ${
                     activeCategory === category
-                      ? "text-blue-600 bg-blue-100"
-                      : "text-[#000000] hover:bg-gray-100"
+                      ? "text-blue-600  border-b-2 border-blue-600"
+                      : "text-[#000000] "
                   }`}
                 >
                   {category}

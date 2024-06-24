@@ -72,7 +72,7 @@ const Wishlist = () => {
             <div className="flex flex-col items-center justify-between lg:mb-0 mb-10">
               {/* <ImCross className="text-[#5356FB] font-light cursor-pointer lg:absolute lg:right3 lg:top-0 lg:mt-3 lg:block md:block hidden" /> */}
               <img
-                className="text-[#5356FB] font-light cursor-pointer lg:absolute lg:right3 lg:top-0 lg:mt-3 lg:block md:block hidden"
+                className="text-[#5356FB] font-light cursor-pointer lg:absolute lg:right3 lg:top-0 lg:mt-3 lg:block md:block hidden h-3"
                 src={cross}
                 alt=""
               />
