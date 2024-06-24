@@ -14,12 +14,14 @@ import ForgotPassword from './pages/ForgotPassword';
 import Orders from './pages/Orders';
 import Address from './pages/Address';
 import Payment from './pages/Payment';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <Router>
+      
       <Routes>
-        <Route path="/" element={<Layout />}>
+        <Route path="/" element={<Navbar/>}>
           <Route index element={<Home />} />
           <Route path="schemes" element={<SchemesPage />} />
           <Route path="login" element={<Login />} />
