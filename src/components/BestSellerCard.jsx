@@ -329,9 +329,9 @@ const BestSellerCard = ({name ,style}) => {
           </button>
         </div>
       </div>
-      <Slider ref={sliderRef} {...settings} className="mt-5 lg:ml-10 ml-8 md:ml-20">
+      <Slider ref={sliderRef} {...settings} className="mt-5   ml-8 md:ml-20 ">
         {Products.map((item, index) => (
-          <div key={index}>
+          <div key={index} className=''>
             <div className="bg-white p-2 rounded-2xl w-60 h-fit  mx-1">
               <div className="grid place-items-center">
                 <img

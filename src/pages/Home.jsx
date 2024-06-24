@@ -47,13 +47,13 @@ const Home = () => {
     </div>
   </div>
   <div className="lg:mx-0 mx-10 lg:mb-0 mb-10 ">
-  <div className="w-full lg:w-80 h-auto lg:h-80 rounded-xl lg:py-0 py-5  "
-  style={{backgroundImage:`url(${yelimg})`}}>
+  <div className="w-full  h-auto lg:h-72 rounded-xl lg:py-0 py-5  "
+  style={{backgroundImage:`url(${yelimg})`,width:"380px"}}>
     <div className="flex flex-col items-center lg:py-10">
       <p className="text-red-600 text-lg font-semibold">Your ticket to luxury!</p>
       <p className="text-indigo-600 font-bold text-xl">introducing</p>
       <h1 className="text-indigo-600 text-4xl font-bold">Schemes</h1>
-      <p className="ml-7 font-bold">Shop for products starting at just ₹299 and win incredible prizes.</p>
+      <p className=" font-bold text-center">Shop for products starting at just ₹299 and win incredible prizes.</p>
       
       {/* <button className="bg-[#5356FB] hover:bg-blue-600 text-white font-bold py-2 px-20 rounded-full mt-6">
           Submit
