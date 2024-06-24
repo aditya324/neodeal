@@ -2,7 +2,7 @@ import React from "react";
 
 const Address = () => {
   return (
-    <div className="p-3 bg-gray-100">
+    <div className="p-3 bg-gray-100 ">
       <h4 className="text-lg sm:text-lg md:text-xl lg:text-2xl font-bold my-3 text-[#C342F9]">
         Address
       </h4>

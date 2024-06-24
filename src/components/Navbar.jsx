@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 // import "./style.css";
 import { GoHeartFill } from "react-icons/go";
@@ -16,10 +16,24 @@ import Logout from "../assets/Logout.png";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const handleClickOutside = (event) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsUserDropdownOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const handleDropdownToggle = () => {
     setIsUserDropdownOpen(!isUserDropdownOpen);
@@ -28,7 +42,7 @@ function Navbar() {
   return (
     <>
       <div className=" ">
-        <nav className=" border-gray-200 bg-black">
+        <nav className=" border-gray-200 bg-black  z-20">
           <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <Link
               to="/"
@@ -80,24 +94,24 @@ function Navbar() {
                     </div>
                   </button>
                   <span className="text-xl text-white">▾</span>
-                  ode
                   <div
                     id="userProfile"
+                    ref={dropdownRef}
                     className={`z-10 ${
                       isUserDropdownOpen ? "block" : "hidden"
-                    } font-normal divide-y divide-gray-100 rounded-md shadow w-44 absolute left-1/2 transform -translate-x-1/2 top-full -ml-14`}
+                    } font-normal divide-y divide-gray-100 rounded-md shadow w-44 absolute left-1/2 transform -translate-x-1/2 top-full -ml-24`}
                   >
                     <ul
-                      className="py-2 text-sm bg-white absolute  rounded-xl  w-56"
+                      className="py-2 text-sm bg-white absolute  rounded-xl w-64"
                       aria-labelledby="dropdownLargeButton"
                     >
-                      <div className="flex p-7 justify-start items-center font-semibold border-b-2 border-gray-500 h-10 text-lg w-full">
+                      <div className="flex p-7 justify-start items-center font-semibold border-b border-gray-300 h-10 text-lg w-full">
                         My Profile
                       </div>
                       <li className="border-b ">
                         <Link
                           to="/cart"
-                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-300 hover:text-[#C342F9] "
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-100 hover:text-[#C342F9] "
                         >
                           <div className="rounded-full p-3 bg-[#FEECFF] text-center">
                             <FaShoppingCart
@@ -112,7 +126,7 @@ function Navbar() {
                       <li className="border-b ">
                         <Link
                           to="/wishlist"
-                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-300 hover:text-[#C342F9] "
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-100 hover:text-[#C342F9] "
                         >
                           <div className="rounded-full p-3 bg-[#FEECFF] text-center">
                             <GoHeartFill className="text-[#9747FF]" size={20} />
@@ -123,7 +137,7 @@ function Navbar() {
                       <li className="border-b ">
                         <Link
                           to="/orders"
-                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-300 hover:text-[#C342F9] "
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-100 hover:text-[#C342F9] "
                         >
                           <div className="rounded-full p-3 bg-[#EFFAFE] text-center">
                             <FaBoxOpen className="text-[#3366FF]" size={20} />
@@ -134,7 +148,7 @@ function Navbar() {
                       <li className="border-b ">
                         <Link
                           to="/profile"
-                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-300 hover:text-[#C342F9] "
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-100 hover:text-[#C342F9] "
                         >
                           <div className="rounded-full p-3 bg-[#EFFAFE] text-center">
                             <FaUser className="text-[#5356FB]" size={20} />
