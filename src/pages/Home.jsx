@@ -13,8 +13,6 @@ import PopularCategories from "../components/PopularCategories";
 
 const Home = () => {
 
-  
-
   return (
     <>
      <div>
