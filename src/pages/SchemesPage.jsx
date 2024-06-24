@@ -69,11 +69,11 @@ const SchemesPage = () => {
 
         <div>
           <div>
-            <p className="text-[#374557] font-semibold text-xl lg:pl-44 pt-4 pl-36 md:pl-20 bg-[#DEDFF3] pb-5">
+            <p className="text-[#374557] font-bold text-xl lg:pl-44 pt-4 pl-36 md:pl-20 bg-[#DEDFF3] pb-5">
               Prize Details
             </p>
           </div>
-          <div className="flex justify-center items-center bg-[#DEDFF3] lg:px-40 px-12 rounded-2xl shadow-xl">
+          <div className="flex justify-center items-center w-full bg-[#DEDFF3] lg:px-40 px-12  shadow-xl">
             <div className="bg-[#EBE4FF] rounded-2xl shadow-xl">
               <div className="flex justify-end mr-1 mt-1">
                 <IoClose className="w-5 h-5" />
@@ -108,7 +108,7 @@ const SchemesPage = () => {
         </div>
 
         <div>
-          <SchemeSlider name="Products under scheme" style="lg:ml-28 text-[#374557] text-xl font-semibold" />
+          <SchemeSlider name="Products under scheme" style="lg:ml-28 text-[#374557] text-xl font-bold" />
         </div>
       </div>
     </>
