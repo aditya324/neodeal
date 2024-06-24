@@ -72,7 +72,6 @@ function Navbar() {
                     <GoHeartFill className="text-white" />
                   </div>
                 </Link>
-
                 <Link to="/cart">
                   <div className="bg-[#37317C] h-9 w-9 rounded-full flex items-center justify-center">
                     <FaShoppingCart className="text-white" />
