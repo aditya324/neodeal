@@ -174,13 +174,13 @@ function Navbar() {
                   </Link>
                 </li>
                 <li>
-                  <a
-                    href="#"
+                  <Link
+                  to='/schemes'
                     className="py-2 px-3 rounded md:p-0 text-white hover:bg-gray-700 hover:text-white flex gap-2"
                   >
                     <RiDiscountPercentFill className="text-white " size={25} />
                     Schemes
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex justify-center items-center">
                   <button
