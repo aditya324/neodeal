@@ -48,7 +48,7 @@ const Cart = () => {
     <>
       <div className="bg-[#DEDFF3] p-2">
         <div
-          className="flex justify-between border-white p-4 w-11/12 md:w-2/3 lg:ml-72 ml-auto mr-auto mt-5 font-semibold rounded-3xl text-base"
+          className="flex justify-between border-white p-4 lg:w-9/12 w-11/12 md:w-2/3 lg:ml-64 ml-auto mr-auto mt-5 font-semibold rounded-3xl text-base"
           style={{
             background:
               "linear-gradient(90deg, rgba(206,125,240,1) 0%, rgba(192,193,255,1) 69%)",
@@ -66,26 +66,26 @@ const Cart = () => {
             </h1>
             <ol className="relative border-l-2 border-[#5356FB] ml-12 lg:ml-20 mt-16 lg:mt-10">
               <li className="mb-10 ml-6">
-                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <FaShoppingCart className="w-4 h-4 text-blue-800 dark:text-blue-300" />
+                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white ">
+                  <FaShoppingCart className="w-4 h-4 text-blue-800 " />
                 </span>
-                <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 ">
                   Cart
                 </h3>
               </li>
               <li className="mb-10 ml-6">
-                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <FaAddressCard className="w-4 h-4 text-blue-800 dark:text-blue-300" />
+                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white  ">
+                  <FaAddressCard className="w-4 h-4 text-blue-800 " />
                 </span>
-                <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
                   Address
                 </h3>
               </li>
               <li className="ml-6">
-                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white dark:ring-gray-900 dark:bg-blue-900">
-                  <MdPayment className="w-4 h-4 text-blue-800 dark:text-blue-300" />
+                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white ">
+                  <MdPayment className="w-4 h-4 text-blue-800 " />
                 </span>
-                <h3 className="mb-1 text-lg font-semibold text-gray-900 dark:text-white">
+                <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
                   Payment
                 </h3>
               </li>
@@ -97,7 +97,7 @@ const Cart = () => {
               {items.map((item) => (
                 <div
                   key={item.id}
-                  className="flex flex-col md:flex-row gap-5 mt-5 relative lg:flex-row bg-white p-3 rounded-2xl"
+                  className="flex flex-col md:flex-row gap-5 mt-5 relative lg:flex-row  bg-white p-3 rounded-2xl"
                 >
                   <div className="flex-shrink-0 w-full sm:w-32 md:w-40 lg:w-auto">
                     <img src={item.image} alt={item.name} className="w-full" />
@@ -117,7 +117,7 @@ const Cart = () => {
                   <div className="flex items-center justify-end lg:mb-0 mb-10">
                     {/* <ImCross className="text-[#5356FB] font-light cursor-pointer absolute right-2 top-2" /> */}
                     <img
-                      className="text-[#5356FB] font-light cursor-pointer absolute right-2 top-2 lg:block md:block hidden h-4"
+                      className="text-[#5356FB] font-light cursor-pointer absolute right-2 top-2 lg:block md:block hidden h-3"
                       src={cross}
                       alt=""
                     />
@@ -125,7 +125,7 @@ const Cart = () => {
                 </div>
               ))}
             </div>
-            <div className="w-full lg:w-1/4 px-4 sm:px-8 md:px-16 lg:px-4 lg:mr-28 xl:px-8 bg-white lg:h-80 rounded-lg lg:mt-6 mt-5">
+            <div className=" w-full lg:w-1/4 px-4 sm:px-8 md:px-16 lg:px-4 lg:mr-28 xl:px-8 bg-white lg:h-80 rounded-lg lg:mt-6 mt-5">
               <div>
                 <h1 className="text-[#374557] font-semibold text-center lg:text-left lg:mt-3">
                   Order Summary
