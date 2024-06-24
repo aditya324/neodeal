@@ -32,7 +32,7 @@ function Navbar() {
               href="#"
               className="flex items-center space-x-3 rtl:space-x-reverse"
             >
-              <img src={MainIcon} className="h-8" alt="Flowbite Logo" />
+              <img src={MainIcon} className="h-10" alt="MainIcon" />
             </a>
             <div className="flex items-center justify-between md:order-2">
               <button
@@ -68,42 +68,53 @@ function Navbar() {
                   </div>
                 </Link>
 
-                <Link className="flex items-center relative" onClick={handleDropdownToggle}>
+                <Link
+                  className="flex items-center relative"
+                  onClick={handleDropdownToggle}
+                >
                   <button onClick={handleDropdownToggle}>
                     <div className="bg-[#37317C] h-9 w-9 rounded-full flex items-center justify-center">
                       <FaUser className="text-white" />
                     </div>
                   </button>
                   <span className="text-xl text-white">▾</span>
-                </Link>
-                <div
-                  id="userProfile"
-                  className={`z-10 ${
-                    isUserDropdownOpen ? "block" : "hidden"
-                  } font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 absolute `}
-                >
-                  <ul
-                    className="py-2 text-sm text-gray-700 absolute"
-                    aria-labelledby="dropdownLargeButton"
+                  ode
+                  <div
+                    id="userProfile"
+                    className={`z-10 ${
+                      isUserDropdownOpen ? "block" : "hidden"
+                    } font-normal divide-y divide-gray-100 rounded-lg shadow w-44 absolute left-1/2 transform -translate-x-1/2 top-full -ml-4`}
                   >
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-600 hover:text-white"
-                      >
-                        Dashboard
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        className="block px-4 py-2 hover:bg-gray-600 hover:text-white"
-                      >
-                        Earnings
-                      </a>
-                    </li>
-                  </ul>
-                </div>
+                    <ul
+                      className="py-2 text-sm bg-white absolute p-8 rounded-xl font-semibold"
+                      aria-labelledby="dropdownLargeButton"
+                    >
+                      <div className="flex justify-start items-center border-b-2 border-gray-500 h-10 text-lg w-full">
+                        My Profile
+                      </div>
+                      <li className="border-b ">
+                        <a
+                          href="#"
+                          className="flex items-center gap-2 px-4 py-2 border-b border-gray-300 hover:text-[#C342F9] "
+                        >
+                          <div className="rounded-full p-3 bg-[#FEECFF] text-center">
+                            <FaShoppingCart className="text-[#5356FB]" />
+                          </div>
+                          Cart
+                        </a>
+                      </li>
+                      <li className="border-b flex">
+                        <a
+                          href="#"
+                          className="block px-4 py-2 border-b border-gray-300 hover:text-[#C342F9]"
+                        >
+                          <GoHeartFill className="text-white" />
+                          Wishlist
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </Link>
               </div>
               <button
                 data-collapse-toggle="navbar-search"
@@ -163,19 +174,25 @@ function Navbar() {
                 <li>
                   <a
                     href="#"
-                    className="py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent  md:p-0 md:text-blue-500 flex gap-0"
+                    className="py-2 px-3 text-white  hover:text-[#F8A926]  rounded  md:p-0  flex gap-0"
                     aria-current="page"
                   >
-                    <IoMdHome className="text-white mr-1" size={25} />
+                    <IoMdHome
+                      className=" hover:text-[#F8A926] text-white mr-1"
+                      size={25}
+                    />
                     Home
                   </a>
                 </li>
                 <li>
                   <a
                     href="#"
-                    className="py-2 px-3 rounded md:p-0 text-white hover:bg-gray-700 hover:text-white flex gap-2"
+                    className="py-2 px-3 rounded md:p-0 text-white hover:text-[#F8A926] flex gap-2"
                   >
-                    <RiDiscountPercentFill className="text-white " size={25} />
+                    <RiDiscountPercentFill
+                      className="hover:text-[#F8A926] "
+                      size={25}
+                    />
                     Schemes
                   </a>
                 </li>
@@ -183,7 +200,7 @@ function Navbar() {
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
-                    className="flex items-center w-full gap-2 py-2 px-3 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto text-white  focus:text-white hover:bg-gray-700 "
+                    className="flex items-center w-full gap-2 py-2 px-3 hover:text-[#F8A926] md:hover:bg-transparent md:border-0 md:hover:text-[#F8A926] md:p-0 md:w-auto text-white  focus:text-white hover:bg-gray-700 "
                   >
                     <HiViewGrid size={25} />
                     All Categories <span className="text-xl">▾</span>
@@ -193,23 +210,23 @@ function Navbar() {
                     className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 "
                   >
                     <ul
-                      className="py-2 text-sm text-gray-700 "
+                      className="py-2 text-sm text-gray-700 font-semibold"
                       aria-labelledby="dropdownLargeButton"
                     >
                       <li>
                         <a
                           href="#"
-                          className="block px-4 py-2 hover:bg-gray-600 hover:text-white"
+                          className="block px-4 py-2  hover:text-[#C342F9]"
                         >
-                          Dashboard
+                          Category 1
                         </a>
                       </li>
                       <li>
                         <a
                           href="#"
-                          className="block px-4 py-2 hover:bg-gray-600 hover:text-white"
+                          className="block px-4 py-2  hover:text-[#C342F9]"
                         >
-                          Earnings
+                          Category 2
                         </a>
                       </li>
                     </ul>
@@ -228,7 +245,7 @@ function Navbar() {
                     href="#"
                     className="py-2 px-3 rounded md:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
                   >
-                    <GoHeartFill className="text-white mr-3" /> Favorites
+                    <GoHeartFill className="text-white mr-3" /> Wishlist
                   </a>
                 </li>
                 <li className="block md:hidden">
