@@ -52,7 +52,7 @@ function App() {
           <Route path='reviews' element={<Reviews/>}/>
           <Route path='yourScheme' element={<YourScheme/>}/>
           <Route path='spin' element={<Spin/>}/>
-          <Route path="ribbon" element={<Ribbon/>}/>
+          
         </Route>
       </Routes>
     </Router>
