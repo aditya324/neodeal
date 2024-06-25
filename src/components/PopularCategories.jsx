@@ -22,16 +22,16 @@ const PopularCategories = () => {
   return (
     <>
       <div className="lg:h-36 h-full w-full bg-[#DEDFF3] relative pb-10 ">
-        <div className="font-semibold text-xl text-[#374557] lg:ml-24 ml-5 mb-5 ">
+        <div className="font-semibold text-xl text-[#374557] lg:ml-32 ml-5 mb-5 ">
           <p>popular categories</p>
         </div>
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:ml-20 ml-20  lg:mt-0 mt-5 md:ml-28">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:ml-20 ml-28 lg:px-10 lg:mt-0 mt-5 md:ml-28">
           {categories.map((category) => {
             return (
               <Link
                 to="/categories"
                 key={category.id}
-                className="bg-white w-52 flex p-3 justify-start items-center rounded-xl relative  "
+                className="bg-white w-56 flex p-3 justify-start items-center rounded-xl relative  "
               >
                 <div className="rounded-full overflow-hidden border-2 border-[#5356FB] p-1">
                   <img
