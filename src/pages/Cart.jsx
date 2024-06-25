@@ -156,7 +156,7 @@ const Cart = () => {
               <Link to="/payment" className="mt-5 flex justify-center">
                 <button className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-800 lg:w-52 md:w-28 w-60 rounded-2xl h-8 text-white mt-2 md:mt-0">
                   Buy now
-                </button>
+                </button> 
               </Link>
             </div>
           </div>

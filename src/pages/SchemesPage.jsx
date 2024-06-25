@@ -17,9 +17,9 @@ const SchemesPage = () => {
       <div>
         {/* banner */}
         <div className="bg-custom-gradient w-full h-96 lg:h-96 md:h-96 flex flex-col lg:flex-row justify-center items-center">
-          <div className="lg:w-5/4 md:w-3/4">
+          <div className="w-full px-20 lg:mr-5 ">
             <div
-              className="h-80 lg:h-full lg:min-w-96 md:w-full w-80 rounded-2xl mx-auto"
+              className="h-80 lg:h- lg:min-w-96 md:w-full w-80 rounded-2xl mx-auto"
               style={{
                 backgroundImage: `url(${homebg})`,
                 backgroundSize: "cover",
