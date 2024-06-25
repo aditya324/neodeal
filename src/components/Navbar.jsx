@@ -7,6 +7,7 @@ import { RiDiscountPercentFill } from "react-icons/ri";
 import { HiViewGrid } from "react-icons/hi";
 import { FaShoppingCart } from "react-icons/fa";
 import { FaUser, FaBoxOpen } from "react-icons/fa";
+import { IoMenu } from "react-icons/io5";
 import Logout from "../assets/Logout.png";
 
 function Navbar() {
@@ -171,47 +172,17 @@ function Navbar() {
                 onClick={handleMenuToggle}
               >
                 <span className="sr-only">Open main menu</span>
-                <svg
-                  className="w-5 h-5"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 17 14"
-                >
-                  <path
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M1 1h15M1 7h15M1 13h15"
-                  />
-                </svg>
+                <IoMenu size={50} />
               </button>
             </div>
             <div
-              className={`items-center justify-between w-full lg:flex lg:w-auto lg:order-1 ${
+              className={`${
                 isMenuOpen ? "block" : "hidden"
-              }`}
+              } items-center justify-between w-full lg:flex lg:w-auto lg:order-1`}
               id="navbar-search"
             >
               <div className="relative mt-3 lg:hidden">
-                <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                  <svg
-                    className="w-4 h-4 text-gray-400"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                    />
-                  </svg>
-                </div>
+                <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"></div>
                 <input
                   type="text"
                   id="search-navbar"
@@ -282,29 +253,104 @@ function Navbar() {
                   </div>
                 </li>
                 <li className="block lg:hidden">
-                  <a
-                    href="#"
+                  <Link
+                    to="/cart"
                     className="py-2 px-3 rounded lg:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
                   >
                     <FaShoppingCart className="text-white mr-3" /> Cart
-                  </a>
+                  </Link>
                 </li>
                 <li className="block lg:hidden">
-                  <a
-                    href="#"
+                  <Link
+                    to="/wishlist"
                     className="py-2 px-3 rounded lg:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
                   >
                     <GoHeartFill className="text-white mr-3" /> Wishlist
-                  </a>
+                  </Link>
                 </li>
                 <li className="block lg:hidden">
-                  <a
-                    href="#"
+                  <Link
+                    to="/profile"
                     className="py-2 px-3 rounded lg:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
+                    onClick={handleDropdownToggle}
                   >
                     <FaUser className="text-white mr-3" />
                     Profile <span className="text-xl">▾</span>
-                  </a>
+                  </Link>
+                  <div
+                    id="userProfile"
+                    ref={dropdownRef}
+                    className={`z-10 ${
+                      isUserDropdownOpen ? "block" : "hidden"
+                    } font-normal divide-y divide-gray-100 rounded-md shadow w-44 absolute left-1/2 transform -translate-x-1/2 top-full -ml-24`}
+                  >
+                    <ul
+                      className="py-2 text-sm bg-white absolute rounded-xl w-64"
+                      aria-labelledby="dropdownLargeButton"
+                    >
+                      <div className="flex p-7 justify-start items-center font-semibold border-b border-gray-300 h-10 text-lg w-full">
+                        My Profile
+                      </div>
+                      <li className="border-b ">
+                        <Link
+                          to="/cart"
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-100 hover:text-[#C342F9]"
+                        >
+                          <div className="rounded-full p-3 bg-[#FEECFF] text-center">
+                            <FaShoppingCart
+                              className="text-[#5356FB]"
+                              size={20}
+                            />
+                          </div>
+                          <p className="text-lg">Cart</p>
+                        </Link>
+                      </li>
+                      <li className="border-b ">
+                        <Link
+                          to="/wishlist"
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-100 hover:text-[#C342F9]"
+                        >
+                          <div className="rounded-full p-3 bg-[#FEECFF] text-center">
+                            <GoHeartFill className="text-[#9747FF]" size={20} />
+                          </div>
+                          <p className="text-lg">Wishlist</p>
+                        </Link>
+                      </li>
+                      <li className="border-b ">
+                        <Link
+                          to="/orders"
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-100 hover:text-[#C342F9]"
+                        >
+                          <div className="rounded-full p-3 bg-[#EFFAFE] text-center">
+                            <FaBoxOpen className="text-[#3366FF]" size={20} />
+                          </div>
+                          <p className="text-lg">My Orders</p>
+                        </Link>
+                      </li>
+                      <li className="border-b ">
+                        <Link
+                          to="/profile"
+                          className="flex items-center gap-4 px-4 py-2 border-b border-gray-100 hover:text-[#C342F9]"
+                        >
+                          <div className="rounded-full p-3 bg-[#EFFAFE] text-center">
+                            <FaUser className="text-[#5356FB]" size={20} />
+                          </div>
+                          <p className="text-lg">My Profile</p>
+                        </Link>
+                      </li>
+                      <li className="border-b ">
+                        <a
+                          href="#"
+                          className="flex items-center gap-4 px-4 py-2 hover:text-[#C342F9]"
+                        >
+                          <div className="rounded-full p-2 bg-[#FDEFEF] text-center">
+                            <img src={Logout} />
+                          </div>
+                          <p className="text-lg">Log Out</p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
                 </li>
               </ul>
             </div>
