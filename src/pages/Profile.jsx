@@ -5,7 +5,7 @@ import profc from "../assets/profcd.png";
 const Profile = () => {
   return (
     <>
-      <div className="lg:overflow-x-hidden bg-[#DEDFF3] lg:h-full lg:w-full  md:overflow-x-hidden h-screen w-screen  ">
+      <div className="lg:overflow-x-hidden bg-[#DEDFF3] lg:h-full lg:w-full  md:overflow-x-hidden h-screen w-screen p-1 ">
         <div className="flex justify-center mt-8">
           <img src={profile} alt="" className="" />
         </div>

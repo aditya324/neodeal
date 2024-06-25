@@ -2,6 +2,7 @@ import React from "react";
 import wish from "../assets/wish.png";
 import { ImCross } from "react-icons/im";
 import cross from "../assets/cross.png";
+import { Link } from "react-router-dom";
 
 const Wishlist = () => {
   // Sample data for the wishlist items
@@ -75,9 +76,11 @@ const Wishlist = () => {
                 src={cross}
                 alt=""
               />
-              <button className="bg-gradient font-semibold lg:w-32 md:w-28  w-60  rounded-2xl h-9 text-white mt-2 md:mt-0 lg:absolute lg:right-3 lg:top-20 ">
-                Add to cart
-              </button>
+              <Link to="/cart">
+                <button className="bg-gradient font-semibold lg:w-32 md:w-28  w-60  rounded-2xl h-9 text-white mt-2 md:mt-0 lg:absolute lg:right-3 lg:top-20 ">
+                  Add to cart
+                </button>
+              </Link>
             </div>
           </div>
         ))}
