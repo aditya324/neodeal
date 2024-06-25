@@ -12,15 +12,22 @@ import review2 from "../assets/review2.png";
 import review3 from "../assets/review3.png";
 import profile from "../assets/profile.png";
 import scheme from "../assets/Rectangle 465.png";
+import { AiFillHeart } from "react-icons/ai";
 
 const ProductPage = () => {
   const [openDescription, setOpenDescription] = useState(true);
   const [openFeatures, setOpenFeatures] = useState(false);
   const [openSpecification, setOpenSpecification] = useState(false);
-  const [isRed, setIsRed] = useState(false);
+  const [isFilled, setIsFilled] = useState(false);
+
+
+  const [mainImage, setMainImage] = useState(phn1);
+  const handleChangeImage = (newImage) => {
+    setMainImage(newImage);
+  };
 
   const handleClick = () => {
-    setIsRed(!isRed);
+    setIsFilled(!isFilled);
   };
 
   const handleDescriptionClick = () => {
@@ -43,58 +50,58 @@ const ProductPage = () => {
 
   return (
     <div className="bg-gray-200 lg:px-32 px-3 py-5">
-      <div className="lg:flex gap-5 ">
-        <div className=" lg:w-1/2 sm:h-96 border bg-white rounded-3xl sm:flex lg:max-xl:w-[98%]">
-          <div className="sm:mt-10 mt-5">
-            <div
-              className="sm:w-32 w-20 sm:h-10 bg-cover bg-center bg-no-repeat text-center py-2.5 text-white font-semibold text-sm leading-4 relative"
-              style={{
-                backgroundImage: `url(${scheme})`,
-                backgroundSize: "90%",
-              }}
-            >
-              <p>Scheme</p>
-            </div>
-
-            <p className="mt-2 ml-2 text-red-500 sm:font-semibold sm:text-xs leading-4">
-              <span>12 HR </span>
-              <span>30 MIN </span>
-              <span>60 SEC </span>
-            </p>
+      <div className="lg:flex gap-5">
+      <div className="lg:w-1/2 sm:h-96 border bg-white rounded-3xl sm:flex lg:max-xl:w-[98%]">
+        <div className="sm:mt-10 mt-5">
+          <div
+            className="sm:w-36 w-20 sm:h-10 bg-cover bg-center bg-no-repeat text-center py-2.5 text-white font-semibold text-sm leading-4 relative"
+            style={{
+              backgroundImage: `url(${scheme})`,
+            }}
+          >
+            <p>Scheme</p>
           </div>
-          <img className="sm:h-96 sm:w-2/3" src={phn1} alt="Phone 1" />
-          <CiHeart
-            className={`text-2xl sm:mt-10 sm:ml-18 sm:mb-0 ml-2 mb-2 ${
-              isRed ? "text-red-500" : ""
-            }`}
-            onClick={handleClick}
-            style={{ cursor: "pointer" }}
-          />
+          <p className="mt-2 ml-2 text-red-500 sm:font-bold sm:text-sm leading-4">
+            <span>12 HR </span>
+            <span> 30 MIN </span>
+            <span> 60 SEC </span>
+          </p>
         </div>
-        <div className="flex lg:flex-col lg:w-1/2 lg:mt-0  gap-5 mt-3">
-          <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
-            <img
-              src={phn1}
-              alt="Phone 1"
-              className="h-28 mx-auto object-cover"
-            />
-          </div>
-          <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
-            <img
-              src={phn2}
-              alt="Phone 2"
-              className="h-28 mx-auto object-cover"
-            />
-          </div>
-          <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
-            <img
-              src={phn3}
-              alt="Phone 3"
-              className="h-28 mx-auto object-cover"
-            />
-          </div>
+        <img className="sm:h-96 sm:w-2/3" src={mainImage} alt="Main" />
+        <div
+          onClick={handleClick}
+          className="cursor-pointer text-2xl sm:mt-10 sm:ml-18 sm:mb-0 ml-2 mb-2"
+        >
+          {isFilled ? <AiFillHeart className="text-red-500" /> : <CiHeart />}
         </div>
       </div>
+      <div className="flex lg:flex-col lg:w-1/2 lg:mt-0 gap-5 mt-3">
+        <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
+          <img
+            src={phn1}
+            alt="Phone 1"
+            className="h-28 mx-auto object-cover cursor-pointer"
+            onClick={() => handleChangeImage(phn1)}
+          />
+        </div>
+        <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
+          <img
+            src={phn2}
+            alt="Phone 2"
+            className="h-28 mx-auto object-cover cursor-pointer"
+            onClick={() => handleChangeImage(phn2)}
+          />
+        </div>
+        <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
+          <img
+            src={phn3}
+            alt="Phone 3"
+            className="h-28 mx-auto object-cover cursor-pointer"
+            onClick={() => handleChangeImage(phn3)}
+          />
+        </div>
+      </div>
+    </div>
       {/* -------------------------- product description -----------------------------------  */}
       <div className="sm:w-2/3 mt-8">
         <h2 className="font-semibold sm:text-2xl text-md">
@@ -135,7 +142,7 @@ const ProductPage = () => {
         </p>
       </div>
       {/* -------------------------------------------- extra description ----------------------------------------------- */}
-      <div className="mt-5">
+      <div className="mt-10">
         <div className="flex  lg:gap-48 lg:justify-start justify-between text-gray-600 sm:font-semibold sm:text-xl text-sm font-medium">
           <h2
             onClick={handleDescriptionClick}
@@ -200,7 +207,7 @@ const ProductPage = () => {
       </div>
       {/* ---------------------------------------- reviews ------------------------------------------------- */}
 
-      <div className="mt-5 ">
+      <div className="mt-10">
         <h2 className="font-semibold sm:text-2xl leading-5">Reviews</h2>
         <div className="mt-5 bg-gray-100 p-10 rounded-3xl">
           <div className="flex justify-between border-b-2 border-gray-200 pb-3">
@@ -255,7 +262,7 @@ const ProductPage = () => {
         </div>
       </div>
       {/* -------------------------------------------- similar products --------------------------------------- */}
-      <div className="mt-5">
+      <div className="mt-10 mb-5">
         <h2 className="font-semibold sm:text-2xl sm:leading-5">
           Similar Products
         </h2>
@@ -275,7 +282,9 @@ const ProductPage = () => {
             <div className="my-3 border border-gray-300 p-1 rounded-lg">
               <p className="text-base font-bold text-purple">
                 ₹ 66,840/-{" "}
-                <span className="text-sm text-red-600">₹ 82200/-</span>
+                <span className="text-sm text-red-600 line-through">
+                  ₹ 82200/-
+                </span>
               </p>
               <p className="font-medium text-sm text-gray-500">32% Discount</p>
             </div>
@@ -292,7 +301,6 @@ const ProductPage = () => {
               </p>
             </div>
           </div>
-
           <div className="w-72 bg-gray-50 rounded-2xl p-4">
             <div className="border h-52 rounded-xl bg-product-bg flex justify-center">
               <img src={phn1} alt="img" className="h-48" />
@@ -306,7 +314,9 @@ const ProductPage = () => {
             <div className="my-3 border border-gray-300 p-1 rounded-lg">
               <p className="text-base font-bold text-purple">
                 ₹ 66,840/-{" "}
-                <span className="text-sm text-red-600">₹ 82200/-</span>
+                <span className="text-sm text-red-600 line-through">
+                  ₹ 82200/-
+                </span>
               </p>
               <p className="font-medium text-sm text-gray-500">32% Discount</p>
             </div>
@@ -323,7 +333,6 @@ const ProductPage = () => {
               </p>
             </div>
           </div>
-
           <div className="w-72 bg-gray-50 rounded-2xl p-4">
             <div className="border h-52 rounded-xl bg-product-bg flex justify-center">
               <img src={phn1} alt="img" className="h-48" />
@@ -337,7 +346,9 @@ const ProductPage = () => {
             <div className="my-3 border border-gray-300 p-1 rounded-lg">
               <p className="text-base font-bold text-purple">
                 ₹ 66,840/-{" "}
-                <span className="text-sm text-red-600">₹ 82200/-</span>
+                <span className="text-sm text-red-600 line-through">
+                  ₹ 82200/-
+                </span>
               </p>
               <p className="font-medium text-sm text-gray-500">32% Discount</p>
             </div>
@@ -354,8 +365,7 @@ const ProductPage = () => {
               </p>
             </div>
           </div>
-
-          <div className="w-72 bg-gray-50 rounded-2xl p-4 mb-10">
+          <div className="w-72 bg-gray-50 rounded-2xl p-4">
             <div className="border h-52 rounded-xl bg-product-bg flex justify-center">
               <img src={phn1} alt="img" className="h-48" />
             </div>
@@ -368,7 +378,9 @@ const ProductPage = () => {
             <div className="my-3 border border-gray-300 p-1 rounded-lg">
               <p className="text-base font-bold text-purple">
                 ₹ 66,840/-{" "}
-                <span className="text-sm text-red-600">₹ 82200/-</span>
+                <span className="text-sm text-red-600 line-through">
+                  ₹ 82200/-
+                </span>
               </p>
               <p className="font-medium text-sm text-gray-500">32% Discount</p>
             </div>

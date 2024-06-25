@@ -6,10 +6,15 @@ import { FcOldTimeCamera } from "react-icons/fc";
 const Orders = () => {
   const [images, setImages] = useState([]);
   const [isTextAreaActive, setTextAreaActive] = useState(false);
+  const [rating, setRating] = useState(0);
+  const [reviewText, setReviewText] = useState("");
+  const [qty, setQty] = useState(1); // Default quantity
+  const [size, setSize] = useState("64gb"); // Default size
+  const [showAlert, setShowAlert] = useState(false); // State to manage alert display
 
   const ratingChanged = (newRating) => {
     console.log(newRating);
-    // Handle rating change here, e.g., send it to a server
+    setRating(newRating);
   };
 
   const handleFileInputChange = (e) => {
@@ -30,6 +35,34 @@ const Orders = () => {
 
   const handleTextAreaBlur = () => {
     setTextAreaActive(false);
+  };
+
+  const handleSubmit = () => {
+    // Prepare review data object
+    const reviewData = {
+      rating: rating,
+      reviewText: reviewText,
+      images: images,
+      qty: qty,
+      size: size,
+    };
+
+    // Simulate a successful submission
+    // You should replace this with actual submission logic to your server
+    // For now, just show an alert and clear the form
+    console.log("Submitting review:", reviewData);
+
+    // Show alert message and clear form
+    setShowAlert(true);
+    setRating(0); // Reset rating to 0
+    setReviewText(""); // Clear review text
+    setImages([]); // Clear images array
+    setTextAreaActive(false); // Reset text area active state
+
+    // Reset showAlert state after 3 seconds
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 3000);
   };
 
   return (
@@ -56,6 +89,8 @@ const Orders = () => {
                 id="qty"
                 name="qty"
                 className="rounded px-2 py-1 bg-[#F6F6F6]"
+                value={qty}
+                onChange={(e) => setQty(parseInt(e.target.value))}
               >
                 <option value="1">1</option>
                 <option value="2">2</option>
@@ -72,6 +107,8 @@ const Orders = () => {
                 id="size"
                 name="size"
                 className="rounded px-2 py-1 bg-[#F6F6F6]"
+                value={size}
+                onChange={(e) => setSize(e.target.value)}
               >
                 <option value="64gb">64 GB</option>
                 <option value="128gb">128 GB</option>
@@ -87,6 +124,7 @@ const Orders = () => {
           <ReactStars
             count={5}
             onChange={ratingChanged}
+            value={rating}
             spacing={10}
             size={35}
             activeColor="#ffd700"
@@ -98,12 +136,14 @@ const Orders = () => {
             Add Detailed Review
           </p>
           <textarea
-            className={`w-full h-44 mt-5 bg-[#EBE4FF] outline-none rounded-2xl p-3 ${
-              isTextAreaActive ? "bg-white" : ""
+            className={`w-full h-44 mt-5 bg-[#EBE4FF] outline-none active:outline-none border-none active:border-none rounded-2xl p-3 ${
+              isTextAreaActive ? "bg-gray-50" : ""
             }`}
             placeholder="Write here"
             onFocus={handleTextAreaFocus}
-            // onBlur={handleTextAreaBlur}
+            onBlur={handleTextAreaBlur}
+            value={reviewText}
+            onChange={(e) => setReviewText(e.target.value)}
           ></textarea>
 
           <input
@@ -119,14 +159,14 @@ const Orders = () => {
             <div className="mt-4">
               <div className="flex flex-wrap w-full mt-5 bg-[#EBE4FF] outline-none rounded-2xl p-3">
                 {images.map((imageUrl, index) => (
-                  <div key={index} className="relative mr-5 mb-2 ">
+                  <div key={index} className="relative mr-5 mb-2">
                     <img
                       src={imageUrl}
                       alt={`Selected Image ${index + 1}`}
                       className="h-24 w-24 object-cover rounded-lg"
                     />
                     <button
-                      className="absolute top-0 right-0 p-1 text-gray-500 rounded-full"
+                      className="absolute top-0 right-0 p-1 text-gray-50 rounded-full"
                       onClick={() => removeImage(index)}
                     >
                       X
@@ -146,10 +186,20 @@ const Orders = () => {
           </label>
         </div>
         <div className="flex justify-center items-center">
-          <button className="w-56 h-9 mt-5 rounded-3xl border border-purple flex items-center justify-center hover:text-white text-purple text-sm hover:bg-Btn-bg font-semibold mb-10 text-center">
+          <button
+            className="w-56 h-9 mt-5 rounded-3xl border border-purple flex items-center justify-center hover:text-white text-purple text-sm hover:bg-Btn-bg font-semibold mb-10 text-center"
+            onClick={handleSubmit}
+          >
             Submit
           </button>
         </div>
+
+        {/* Alert message */}
+        {showAlert && (
+          <div className="absolute bottom-0 right-0 m-4 bg-green-500 text-white p-2 rounded-md">
+            Thank you for your review!
+          </div>
+        )}
       </div>
     </>
   );
