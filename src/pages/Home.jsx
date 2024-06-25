@@ -20,7 +20,7 @@ const Home = () => {
      <div>
      <div className="bg-custom-gradient w-full h-auto lg:h-96 flex flex-col lg:flex-row justify-start items-center gap-16">
   <div
-    className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 p-5 rounded-2xl lg:h-auto ml-5  place-items-center w-full lg:w-4/5 md:w-5/6 lg:ml-12"
+    className="grid lg:grid-cols-2 md:grid-cols-2 sm:grid-cols-1 p-5 rounded-2xl lg:h-auto   place-items-center w-full lg:w-4/5 md:w-5/6 lg:ml-12 md:ml-0 "
     style={{ backgroundImage: `url(${purbbg})`,  backgroundSize: "cover",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat" }}
@@ -51,9 +51,10 @@ spin the wheel & WIN!
         </p>
       </div>
     </div>
+
   </div>
   <div className="lg:mx-0 mx-10 lg:mb-0 mb-10 ">
-  <div className="w-full  h-auto lg:h-80 rounded-xl lg:py-0 py-5 mr-16  "
+  <div className="w-full  h-auto lg:h-80 rounded-xl lg:py-0 py-5 lg:mr-16 md:mr-0 mr-0   "
   style={{backgroundImage:`url(${yelimg})`,width:"380px"}}>
     <div className="flex flex-col items-center lg:py-10">
       <p className="text-red-600 text-lg font-semibold">Your ticket to luxury!</p>
@@ -64,7 +65,7 @@ spin the wheel & WIN!
       {/* <button className="bg-[#5356FB] hover:bg-blue-600 text-white font-bold py-2 px-20 rounded-full mt-6">
           Submit
       </button> */}
-      <Button name="VIew All Schemes" style="bg-[#5356FB] hover:bg-blue-600 text-white font-bold py-3 px-10 rounded-full mt-6" />
+      <Button name="VIew All Schemes" style="bg-[#5356FB] hover:bg-blue-600 text-white font-bold py-3 text- px-10 rounded-full mt-6" />
       
     </div>
   </div>
