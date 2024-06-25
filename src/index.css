@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+<<<<<<< HEAD
+body {
+  font-family: 'Poppins', sans-serif;
+}
+=======
 
 
 
 
 
-
-
+>>>>>>> 09aac30425a4ac91742f7fa48e8c8141e664ce60

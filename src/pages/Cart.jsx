@@ -1,11 +1,11 @@
 import React from "react";
 import { ImCross } from "react-icons/im";
-// Import your image here
 import wish from "../assets/wish.png"; // Ensure the correct path to your image
 import { FaShoppingCart } from "react-icons/fa";
 import { FaAddressCard } from "react-icons/fa6";
 import { MdPayment } from "react-icons/md";
 import cross from "../assets/cross.png";
+import { Link } from "react-router-dom";
 const Cart = () => {
   const items = [
     {
@@ -56,7 +56,9 @@ const Cart = () => {
           <h1>
             Delivering To <span className="text-[#5356FB]">580030</span>
           </h1>
-          <p className="text-[#5356FB] cursor-pointer">Edit</p>
+          <Link to="/address">
+            <p className="text-[#5356FB] cursor-pointer">Edit</p>
+          </Link>
         </div>
         <div className="flex flex-col lg:flex-row bg-[#DEDFF3]">
           <div>
@@ -153,11 +155,11 @@ const Cart = () => {
                 <h1>Total</h1>
                 <p>₹ 6,06,840/- </p>
               </div>
-              <div className="mt-5 flex justify-center">
+              <Link to="/payment" className="mt-5 flex justify-center">
                 <button className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-800 lg:w-52 md:w-28 w-60 rounded-2xl h-8 text-white mt-2 md:mt-0">
                   Buy now
-                </button>
-              </div>
+                </button> 
+              </Link>
             </div>
           </div>
         </div>
