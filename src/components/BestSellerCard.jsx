@@ -284,7 +284,7 @@ const BestSellerCard = ({name ,style}) => {
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false, // Disable default arrows
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 3000, // Auto-play speed in milliseconds
     pauseOnHover: true,
     responsive: [
@@ -313,10 +313,10 @@ const BestSellerCard = ({name ,style}) => {
   };
 
   return (
-    <div className='bg-[#DEDFF3] py-10'>
-      <div className="flex justify-between items-center mb-4 ">
+    <div className='bg-[#DEDFF3] border border-red-500  lg:px-16 '>
+      <div className="flex justify-between items-center mb-4 lg:flex-row  flex-col md:flex-row   " >
         <p className={style}>{name}</p>
-        <div className="flex justify-end items-center gap-2 lg:mr-20">
+        <div className="flex justify-end items-center gap-2 lg:mr-10 lg:mt-0 md:mt-0 mt-5">
           <button onClick={() => sliderRef.current.slickPrev()}>
             <div className="bg-[#5356FB] p-3 rounded-full">
               <IoIosArrowBack className="text-white" />
@@ -329,44 +329,46 @@ const BestSellerCard = ({name ,style}) => {
           </button>
         </div>
       </div>
-      <Slider ref={sliderRef} {...settings} className="ml-20 ">
-  {Products.map((item, index) => (
-    <div key={index} className=" ">
-      <div className="bg-white p-2 rounded-2xl w-60 h-fit">
-        <div className="grid place-items-center">
-          <img
-            src={item.bgimg}
-            alt=""
-            className="rounded-lg h-32 w-full object-cover"
-          />
-        </div>
-        <p className="my-2 grid">
-          <span className="text-gray-500">Category:<span className="text-[#5356FB] whitespace-nowrap">
-            {item.category}
-          </span></span>
-          
-        </p>
-        <p className="text-xl font-bold my-2">{item.pname}</p>
-        <div className="border border-gray-200 px-2 py-1 rounded-xl">
-          <p className="text-gray-500">Current Scheme</p>
-          <div className="flex justify-start items-center gap-2">
-            <span className="text-[#5356FB] font-semibold">
-              ${item.price}/-{" "}
-            </span>
-            <span className="text-[#EB5757] font-semibold line-through">
-              $9200/-
-            </span>
+      <div className='border border-yellow-300    '>
+      <Slider ref={sliderRef} {...settings} className="" >
+        {Products.map((item, index) => (
+          <div key={index}>
+            <div className="bg-white p-2 rounded-2xl w-64 h-fit ">
+              <div className="grid place-items-center">
+                <img
+                  src={item.bgimg}
+                  alt=""
+                  className="rounded-lg h-32 w-full object-cover"
+                />
+              </div>
+              <p className="my-2 grid">
+                <span className="text-gray-500 font-base">Category <span className="text-[#5356FB] whitespace-nowrap font-bold">
+                  {item.category}
+                </span> </span>
+                
+              </p>
+              <p className="text-lg font-semibold my-2">{item.pname}</p>
+              <div className="border border-gray-200 px-2 py-1 rounded-xl">
+                <p className="text-gray-500">Current Scheme</p>
+                <div className="flex justify-start items-center gap-2">
+                  <span className="text-[#5356FB] font-bold">
+                    ${item.price}/-{" "}
+                  </span>
+                  <span className="text-[#EB5757] font-bold line-through">
+                    $9200/-
+                  </span>
+                </div>
+              </div>
+              <div className="my-3">
+                <button className="bg-[#F539F8] text-white px-3 py-1 rounded-full">
+                  Get Now
+                </button>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="my-3">
-          <button className="bg-[#F539F8] text-white px-3 py-1 rounded-full">
-            Get Now
-          </button>
-        </div>
+        ))}
+      </Slider>
       </div>
-    </div>
-  ))}
-</Slider>
     </div>
   );
 };

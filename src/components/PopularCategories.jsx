@@ -44,9 +44,9 @@ const PopularCategories = () => {
                   <h2>{category.name}</h2>
                 </div>
                 <div className=" ">
-                  {/* <div style={{backgroundImage:`url(${triangle})`}} className="">
+                  <div style={{backgroundImage:`url(${triangle})`}} className="">
                   <IoIosArrowRoundForward />
-                  </div> */}
+                  </div>
                 </div>
               </Link>
             );
