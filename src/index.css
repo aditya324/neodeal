@@ -2,10 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* index.css */
 
-
-
-
-
-
-
+.bg-gradient {
+  background-image: linear-gradient(
+    to bottom right,
+    #f539f8,
+    #ec3bf8,
+    #e33df9,
+    #da3ef9,
+    #d040f9,
+    #c443fa,
+    #b846fb,
+    #ac49fb,
+    #994dfc,
+    #8551fc,
+    #6e54fc,
+    #5356fb
+  );
+}
