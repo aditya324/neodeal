@@ -29,8 +29,8 @@ const Home = () => {
           >
             <div className="">
               <p className="text-white font-semibold text-lg">Buy any product from schemes and</p>
-              <p className="text-white text-7xl font-extrabold my-2">WIN BIG!</p>
-              <p className="text-white font-medium">
+              <p className="text-white text-7xl font-extrabold my-2 font-poppins">WIN BIG!</p>
+              <p className="text-white font-medium ">
                 Each purchase of a product earns you a unique number,
                 unlocking the chance to <br /> win lavish prizes.
               </p>
