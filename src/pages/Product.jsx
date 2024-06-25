@@ -17,6 +17,11 @@ const ProductPage = () => {
   const [openDescription, setOpenDescription] = useState(true);
   const [openFeatures, setOpenFeatures] = useState(false);
   const [openSpecification, setOpenSpecification] = useState(false);
+  const [isRed, setIsRed] = useState(false);
+
+  const handleClick = () => {
+    setIsRed(!isRed);
+  };
 
   const handleDescriptionClick = () => {
     setOpenDescription(true);
@@ -58,7 +63,13 @@ const ProductPage = () => {
             </p>
           </div>
           <img className="sm:h-96 sm:w-2/3" src={phn1} alt="Phone 1" />
-          <CiHeart className="text-2xl sm:mt-10 sm:ml-18 sm:mb-0 ml-2 mb-2" />
+          <CiHeart
+            className={`text-2xl sm:mt-10 sm:ml-18 sm:mb-0 ml-2 mb-2 ${
+              isRed ? "text-red-500" : ""
+            }`}
+            onClick={handleClick}
+            style={{ cursor: "pointer" }}
+          />
         </div>
         <div className="flex lg:flex-col lg:w-1/2 lg:mt-0  gap-5 mt-3">
           <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
@@ -206,10 +217,26 @@ const ProductPage = () => {
           </div>
           {/*  -------------------- review images ----------------------- */}
           <div className="mt-3 flex gap-4 sm:flex-row flex-wrap sm:gap-7">
-            <img src={review} alt="review" className="h-40 w-36 object-cover rounded-lg " />
-            <img src={review1} alt="review" className="h-40 w-36 object-cover rounded-lg" />
-            <img src={review2} alt="review" className="h-40 w-36 object-cover rounded-lg" />
-            <img src={review3} alt="review" className="h-40 w-36 object-cover rounded-lg" />
+            <img
+              src={review}
+              alt="review"
+              className="h-40 w-36 object-cover rounded-lg "
+            />
+            <img
+              src={review1}
+              alt="review"
+              className="h-40 w-36 object-cover rounded-lg"
+            />
+            <img
+              src={review2}
+              alt="review"
+              className="h-40 w-36 object-cover rounded-lg"
+            />
+            <img
+              src={review3}
+              alt="review"
+              className="h-40 w-36 object-cover rounded-lg"
+            />
           </div>
 
           <div className="mt-3">
