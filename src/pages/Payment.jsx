@@ -1,5 +1,9 @@
 import React from "react";
-import { GrCreditCard } from "react-icons/gr";
+import { Link } from "react-router-dom";
+// import { GrCreditCard } from "react-icons/gr";
+import { FaShoppingCart } from "react-icons/fa";
+import { FaAddressCard } from "react-icons/fa6";
+import { MdPayment } from "react-icons/md";
 import cardImage from "../assets/PaymentCardImage.png";
 import byCash from "../assets/BycashImage.png";
 import byGooglePay from "../assets/Googleimage.png";
@@ -16,8 +20,40 @@ const Payment = () => {
 
   const years = generateYears(new Date().getFullYear(), 2100);
   return (
-    <div className="p-2 bg-gray-100 flex justify-center flex-col items-start gap-4 lg:flex-row lg:gap-0 h-full ">
-      <div className=" flex flex-col justify-center items-center w-full gap-2">
+    <div className="p-2 bg-gray-100 flex justify-center flex-col  sm:items-center md:items-center gap-4 lg:flex-row lg:gap-5 h-full  ">
+      {/*------------------------------------- Timeline--------------------------------------------*/}
+      <div className="flex flex-col items-center ml-6 lg:ml-6 lg:px-10 mt-8  lg:mt-10 lg:self-start">
+        <h1 className="text-2xl text-[#374557] font-semibold">Cart</h1>
+        <ol className="relative border-l-2 border-[#5356FB] mt-6">
+          <li className="mb-10 ml-6">
+            <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">
+              <FaShoppingCart className="w-4 h-4 text-blue-800" />
+            </span>
+            <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">
+              Cart
+            </h3>
+          </li>
+          <li className="mb-10 ml-6">
+            <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">
+              <FaAddressCard className="w-4 h-4 text-blue-800" />
+            </span>
+            <h3 className="mb-1 text-lg font-semibold text-gray-900">
+              Address
+            </h3>
+          </li>
+          <li className="ml-6">
+            <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white">
+              <MdPayment className="w-4 h-4 text-blue-800" />
+            </span>
+            <h3 className="mb-1 text-lg font-semibold text-gray-900">
+              Payment
+            </h3>
+          </li>
+        </ol>
+      </div>
+
+      {/*--------------------------------Payment method-------------------------------------- */}
+      <div className=" flex flex-col justify-center items-center w-full gap-2 ">
         <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-4 place-content-between">
           <button
             type="button"
@@ -126,7 +162,7 @@ const Payment = () => {
                 <option value="" disabled selected>
                   Select year
                 </option>
-                
+
                 {years.map((year) => (
                   <option key={year} value={year}>
                     {year}
@@ -139,16 +175,16 @@ const Payment = () => {
             type="submit"
             className="text-white bg-custom-card hover:bg-custom-gradient-hover focus:ring-[#C342F9] focus:ring-4 focus:outline-none font-medium text-sm w-auto md:w-52 px-5 py-2.5 text-center rounded-3xl"
           >
-            Save address
+            Place Order
           </button>
         </div>
       </div>
 
       {/* ----------------------------------ORDER SUMMARY----------------------------------  */}
 
-      <div className="w-full flex justify-center items-center">
-        <div class="max-w-sm p-6 w-full bg-[#EBE4FF] border border-white rounded-xl shadow  lg:w-full">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
+      {/* <div className="w-full flex justify-center items-center">
+        <div className="max-w-sm p-6 w-full bg-[#EBE4FF] border border-white rounded-xl shadow  lg:w-full">
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 ">
             Order Summary
           </h5>
           <div className="flex justify-between items-center">
@@ -171,6 +207,43 @@ const Payment = () => {
             <p className="font-semibold text-[#5356FB]">Total</p>{" "}
             <p className="font-semibold text-[#5356FB]">₹ 66,840/-</p>
           </div>
+        </div>
+      </div> */}
+      <div className=" w-full lg:w-1/4 px-4 sm:px-8 md:px-16 lg:px-4  xl:px-8 bg-white lg:h-80 rounded-lg lg:mt-6 mt-5 lg:mr-3 py-4 lg:py-0 ">
+        <div className="">
+          <div>
+            <h1 className="text-[#374557] font-semibold text-center lg:text-left lg:mt-3">
+              Order Summary
+            </h1>
+          </div>
+          <div className="flex justify-between mt-4">
+            <h1>Total MRP</h1>
+            <p>₹ 6,06,840</p>
+          </div>
+          <div className="flex justify-between mt-2">
+            <h1>Discount</h1>
+            <p>20%</p>
+          </div>
+          <div className="flex justify-between mt-2">
+            <h1>Shipping fee</h1>
+            <p>--</p>
+          </div>
+          <div className="flex justify-between mt-2">
+            <h1>Shipping fee</h1>
+            <p>--</p>
+          </div>
+          <p className="flex justify-center my-4">
+            ----------------------------
+          </p>
+          <div className="flex justify-between text-[#5356FB]">
+            <h1>Total</h1>
+            <p>₹ 6,06,840/- </p>
+          </div>
+          <Link to="/payment" className="my-5 flex justify-center">
+            <button className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-800 lg:w-52 md:w-28 w-60 rounded-2xl h-8 text-white mt-2 md:mt-0">
+              Buy now
+            </button>
+          </Link>
         </div>
       </div>
     </div>
