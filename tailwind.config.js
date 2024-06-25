@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        poppins: ["Poppins", "sans-serif"],
+      },
       colors: {
         "custom-blue": "rgba(100,89,226,1)",
         "custom-indigo": "rgba(55,49,124,1)",
@@ -24,8 +27,9 @@ export default {
         "Btn-bg":
           "linear-gradient(90deg, #F539F8 0%, #C342F9 50%, #5356FB 100%)",
         "product-bg": "radial-gradient(#4C1D95, #111827, #312E81)",
+        
+        "Custom-btn-bg": "linear-gradient(#3D0179, #7002DF)",
       },
-      
     },
   },
   plugins: [],

@@ -42,7 +42,7 @@ const SchemeCard = () => {
                   />
                 </div>
                 <div className="text-center px-6 py-2">
-                  <p className="text-[#374557] font-medium text-lg mb-1">
+                  <p className="text-[#374557] font-medium text-2xl mb-1">
                     {scheme.text}
                   </p>
                 </div>

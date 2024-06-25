@@ -24,6 +24,7 @@ import Reviews from './pages/Reviews'
 import YourScheme from './pages/YourScheme';
 import Navbar from './components/Navbar';
 import Spin from './pages/Spin';
+import Ribbon from "./components/Ribbon";
 
 function App() {
   return (
@@ -51,6 +52,7 @@ function App() {
           <Route path='reviews' element={<Reviews/>}/>
           <Route path='yourScheme' element={<YourScheme/>}/>
           <Route path='spin' element={<Spin/>}/>
+          <Route path="ribbon" element={<Ribbon/>}/>
         </Route>
       </Routes>
     </Router>

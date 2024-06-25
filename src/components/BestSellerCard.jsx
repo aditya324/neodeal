@@ -291,7 +291,7 @@ const BestSellerCard = ({name ,style}) => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 1,
         }
       },
@@ -313,10 +313,10 @@ const BestSellerCard = ({name ,style}) => {
   };
 
   return (
-    <div className='bg-[#DEDFF3] border border-red-500  lg:px-16 '>
-      <div className="flex justify-between items-center mb-4 lg:flex-row  flex-col md:flex-row   " >
-        <p className={style}>{name}</p>
-        <div className="flex justify-end items-center gap-2 lg:mr-10 lg:mt-0 md:mt-0 mt-5">
+    <div className='bg-[#DEDFF3]  lg:px-16 '>
+      <div className="flex justify-between items-center mb-3 lg:mb-4 lg:flex-row  flex-col md:flex-row   " >
+        <p className="font-semibold text-[#374557]  text-xl mt-5 lg:ml-0 ml-0 md:ml-10 md:mt-5">Best Seller</p>
+        <div className="flex justify-end items-center gap-2 lg:mr-8 lg:mt-0  mt-5 md:mt-8 md:mr-5">
           <button onClick={() => sliderRef.current.slickPrev()}>
             <div className="bg-[#5356FB] p-3 rounded-full">
               <IoIosArrowBack className="text-white" />
@@ -329,11 +329,11 @@ const BestSellerCard = ({name ,style}) => {
           </button>
         </div>
       </div>
-      <div className='border border-yellow-300    '>
+      <div className='lg:mx-0 md:mx-3 mx-12 lg:ml-0  ml-3   '>
       <Slider ref={sliderRef} {...settings} className="" >
         {Products.map((item, index) => (
-          <div key={index}>
-            <div className="bg-white p-2 rounded-2xl w-64 h-fit ">
+          <div key={index} className='lg:px-0 px-8 md:px-4 lg:ml-0 md:ml-0 ml-10'>
+            <div className="bg-white p-2 rounded-2xl lg:w-64 h-fit w-60 ">
               <div className="grid place-items-center">
                 <img
                   src={item.bgimg}

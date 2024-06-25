@@ -2,17 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
-
-
-
-.slick-slide {
-  margin-right: 20px; /* Adjust the right margin to create a gap */
+body {
+  @apply font-poppins; 
 }
 
-/* To prevent the last item from having extra margin */
-.slick-slide:last-child {
-  margin-right: 0;
-}
+
+
+
+
+
