@@ -20,7 +20,7 @@ const Payment = () => {
 
   const years = generateYears(new Date().getFullYear(), 2100);
   return (
-    <div className="p-2 bg-gray-100 flex justify-center flex-col  sm:items-center md:items-center gap-4 lg:flex-row lg:gap-0 h-full ">
+    <div className="p-2 bg-gray-100 flex justify-center flex-col  sm:items-center md:items-center gap-4 lg:flex-row lg:gap-5 h-full  ">
       {/*------------------------------------- Timeline--------------------------------------------*/}
       <div className="flex flex-col items-center ml-6 lg:ml-6 lg:px-10 mt-8  lg:mt-10 lg:self-start">
         <h1 className="text-2xl text-[#374557] font-semibold">Cart</h1>
@@ -209,8 +209,8 @@ const Payment = () => {
           </div>
         </div>
       </div> */}
-      <div className=" w-full lg:w-1/4 px-4 sm:px-8 md:px-16 lg:px-4 lg:mr-10 xl:px-8 bg-white lg:h-80 rounded-lg lg:mt-6 mt-5 ">
-        <div>
+      <div className=" w-full lg:w-1/4 px-4 sm:px-8 md:px-16 lg:px-4  xl:px-8 bg-white lg:h-80 rounded-lg lg:mt-6 mt-5 lg:mr-3 py-4 lg:py-0 ">
+        <div className="">
           <div>
             <h1 className="text-[#374557] font-semibold text-center lg:text-left lg:mt-3">
               Order Summary
