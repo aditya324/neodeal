@@ -47,7 +47,6 @@ const Cart = () => {
       <div className="bg-[#DEDFF3] p-2">
         <div
           className="flex justify-between border-white p-4 lg:w-9/12 w-11/12 md:w-2/3 lg:ml-64 ml-auto mr-auto mt-5 font-semibold rounded-3xl text-base"
-          className="flex justify-between border-white p-4 lg:w-9/12 w-11/12 md:w-2/3 lg:ml-64 ml-auto mr-auto mt-5 font-semibold rounded-3xl text-base"
           style={{
             background:
               "linear-gradient(90deg, rgba(206,125,240,1) 0%, rgba(192,193,255,1) 69%)",
@@ -118,7 +117,6 @@ const Cart = () => {
                     {/* <ImCross className="text-[#5356FB] font-light cursor-pointer absolute right-2 top-2" /> */}
                     <img
                       className="text-[#5356FB] font-light cursor-pointer absolute right-2 top-2 lg:block md:block hidden h-3"
-                      className="text-[#5356FB] font-light cursor-pointer absolute right-2 top-2 lg:block md:block hidden h-3"
                       src={cross}
                       alt=""
                     />
@@ -158,7 +156,7 @@ const Cart = () => {
               <Link to="/payment" className="mt-5 flex justify-center">
                 <button className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-800 lg:w-52 md:w-28 w-60 rounded-2xl h-8 text-white mt-2 md:mt-0">
                   Buy now
-                </button> 
+                </button>
               </Link>
             </div>
           </div>

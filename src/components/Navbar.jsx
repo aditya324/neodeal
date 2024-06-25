@@ -51,13 +51,13 @@ function Navbar() {
                 type="button"
                 aria-controls="navbar-search"
                 aria-expanded={isMenuOpen ? "true" : "false"}
-                className="md:hidden text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-lg text-sm p-2.5 me-1"
+                className="lg:hidden text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-lg text-sm p-2.5 me-1"
                 onClick={handleMenuToggle}
               >
                 <IoMdSearch className="text-gray-500" size={30} />
                 <span className="sr-only">Search</span>
               </button>
-              <div className="relative hidden md:flex md:gap-3">
+              <div className="relative hidden lg:flex lg:gap-3">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                   <IoMdSearch className="text-gray-500" />
                 </div>
@@ -165,7 +165,7 @@ function Navbar() {
               </div>
               <button
                 type="button"
-                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden focus:outline-none focus:ring-2 hover:bg-gray-700 focus:ring-gray-600"
+                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 hover:bg-gray-700 focus:ring-gray-600"
                 aria-controls="navbar-search"
                 aria-expanded={isMenuOpen ? "true" : "false"}
                 onClick={handleMenuToggle}
@@ -189,12 +189,12 @@ function Navbar() {
               </button>
             </div>
             <div
-              className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${
+              className={`items-center justify-between w-full lg:flex lg:w-auto lg:order-1 ${
                 isMenuOpen ? "block" : "hidden"
               }`}
               id="navbar-search"
             >
-              <div className="relative mt-3 md:hidden">
+              <div className="relative mt-3 lg:hidden">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                   <svg
                     className="w-4 h-4 text-gray-400"
@@ -219,11 +219,11 @@ function Navbar() {
                   placeholder="Search..."
                 />
               </div>
-              <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 bg-black border-gray-700">
+              <ul className="flex flex-col p-4 lg:p-0 mt-4 font-medium border rounded-lg lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 bg-black border-gray-700">
                 <li className="group hover:text-[#F8A926]">
                   <Link
                     to="/"
-                    className="py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:p-0 md:text-blue-500 flex gap-0 group-hover:text-[#F8A926]"
+                    className="py-2 px-3 text-white bg-blue-700 rounded lg:bg-transparent lg:p-0 lg:text-blue-500 flex gap-0 group-hover:text-[#F8A926]"
                     aria-current="page"
                   >
                     <IoMdHome
@@ -236,7 +236,7 @@ function Navbar() {
                 <li className="hover:text-[#F8A926]">
                   <Link
                     to="/schemes"
-                    className="py-2 px-3 rounded md:p-0 text-white hover:text-[#F8A926] flex gap-2"
+                    className="py-2 px-3 rounded lg:p-0 text-white hover:text-[#F8A926] flex gap-2"
                   >
                     <RiDiscountPercentFill
                       className="hover:text-[#F8A926]"
@@ -249,7 +249,7 @@ function Navbar() {
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
-                    className="flex items-center w-full gap-2 py-2 px-3 hover:text-[#F8A926] md:hover:bg-transparent md:border-0 md:hover:text-[#F8A926] md:p-0 md:w-auto text-white focus:text-white hover:bg-gray-700"
+                    className="flex items-center w-full gap-2 py-2 px-3 hover:text-[#F8A926] lg:hover:bg-transparent lg:border-0 lg:hover:text-[#F8A926] lg:p-0 lg:w-auto text-white focus:text-white hover:bg-gray-700"
                   >
                     <HiViewGrid size={25} />
                     All Categories <span className="text-xl">▾</span>
@@ -281,26 +281,26 @@ function Navbar() {
                     </ul>
                   </div>
                 </li>
-                <li className="block md:hidden">
+                <li className="block lg:hidden">
                   <a
                     href="#"
-                    className="py-2 px-3 rounded md:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
+                    className="py-2 px-3 rounded lg:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
                   >
                     <FaShoppingCart className="text-white mr-3" /> Cart
                   </a>
                 </li>
-                <li className="block md:hidden">
+                <li className="block lg:hidden">
                   <a
                     href="#"
-                    className="py-2 px-3 rounded md:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
+                    className="py-2 px-3 rounded lg:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
                   >
                     <GoHeartFill className="text-white mr-3" /> Wishlist
                   </a>
                 </li>
-                <li className="block md:hidden">
+                <li className="block lg:hidden">
                   <a
                     href="#"
-                    className="py-2 px-3 rounded md:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
+                    className="py-2 px-3 rounded lg:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
                   >
                     <FaUser className="text-white mr-3" />
                     Profile <span className="text-xl">▾</span>
