@@ -6,6 +6,9 @@ import laptop from "../assets/laptop.png";
 import sound from "../assets/sound.png";
 import star from "../assets/star.png";
 import { RiArrowDropLeftLine, RiArrowDropRightLine } from "react-icons/ri";
+import { AiFillHeart } from "react-icons/ai";
+import { FiHeart } from "react-icons/fi";
+import { FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const categories = [
@@ -30,7 +33,7 @@ const products = [
   {
     category: "Electronics",
     title: "Laptops",
-    description: "Special offer",
+    description: "Current Scheme",
     oldPrice: "₹ 120000/-",
     newPrice: "₹ 95000/-",
     image: laptop,
@@ -38,7 +41,7 @@ const products = [
   {
     category: "Electronics",
     title: "Sound Systems",
-    description: "Limited time deal",
+    description: "Current Scheme",
     oldPrice: "₹ 2000/-",
     newPrice: "₹ 15000/-",
     image: sound,
@@ -46,7 +49,7 @@ const products = [
   {
     category: "Electronics",
     title: "Headphones",
-    description: "Limited time deal",
+    description: "Current Scheme",
     oldPrice: "₹ 2000/-",
     newPrice: "₹ 15000/-",
     image: catc,
@@ -54,7 +57,7 @@ const products = [
   {
     category: "Electronics",
     title: "Headphones",
-    description: "Limited time deal",
+    description: "Current Scheme",
     oldPrice: "₹ 2000/-",
     newPrice: "₹ 15000/-",
     image: catc,
@@ -62,28 +65,19 @@ const products = [
   {
     category: "Electronics",
     title: "Headphones",
-    description: "Limited time deal",
+    description: "Current Scheme",
     oldPrice: "₹ 2000/-",
     newPrice: "₹ 15000/-",
     image: catc,
   },
-  // Add more products here as needed
 ];
 
 const priceFilters = [
-  { label: "1000 to ₹5000", value: "1000 to 5000" },
-  { label: "₹5000 to ₹10000", value: "5000to10000" },
-  { label: "₹10000 to ₹15000", value: "10000to15000" },
-  { label: "₹15000 to ₹20000", value: "15000to20000" },
-  { label: " ₹20000 to ₹50000", value: "20000to50000" },
-];
-
-const ratingFilters = [
-  { label: "5 Stars", value: "5stars", count: 5 },
-  { label: "4 Stars & Up", value: "4stars", count: 4 },
-  { label: "3 Stars & Up", value: "3stars", count: 3 },
-  { label: "2 Stars & Up", value: "2stars", count: 2 },
-  { label: "1 Star & Up", value: "1star", count: 1 },
+  { label: "1000 - 5000", value: "1000 to 5000" },
+  { label: "5000 - 10000", value: "5000to10000" },
+  { label: "10000 - 15000", value: "10000to15000" },
+  { label: "15000 - 20000", value: "15000to20000" },
+  { label: " 20000 - 50000", value: "20000to50000" },
 ];
 
 const colorFilters = [
@@ -101,8 +95,19 @@ const colorFilters = [
   { label: "sky blue", value: "sky blue", color: "#00C7BBB2" },
 ];
 
+const ratingFilters = [
+  { label: "5 Stars", value: "5stars", count: 5 },
+  { label: "4 Stars & Up", value: "4stars", count: 4 },
+  { label: "3 Stars & Up", value: "3stars", count: 3 },
+  { label: "2 Stars & Up", value: "2stars", count: 2 },
+  { label: "1 Star & Up", value: "1star", count: 1 },
+];
+
 const Categories = () => {
-  const [activeCategory, setActiveCategory] = useState(null);
+  const [activeCategory, setActiveCategory] = useState("Electronics"); // Initialize activeCategory with "Electronics"
+  const [filledHearts, setFilledHearts] = useState(
+    Array(products.length).fill(false)
+  );
 
   const handleToggle = (category) => {
     setActiveCategory(activeCategory === category ? null : category);
@@ -122,6 +127,12 @@ const Categories = () => {
     }
   };
 
+  const handleClick = (prodIndex) => {
+    const newFilledHearts = [...filledHearts];
+    newFilledHearts[prodIndex] = !newFilledHearts[prodIndex];
+    setFilledHearts(newFilledHearts);
+  };
+
   return (
     <div className="min-h-screen bg-[#DEDFF3]">
       <div className="min-h-screen flex flex-col p-4">
@@ -131,7 +142,7 @@ const Categories = () => {
         </div>
 
         <div className="flex flex-col lg:flex-row lg:mt-5">
-          <aside className="w-full lg:w-64 p-4 bg-white rounded-lg shadow-lg border border-gray-[#C0C0C0] lg:ml-5 mt-4 lg:mt-0">
+          <aside className="w-full lg:w-64 p-4 bg-[#DEDFF3] rounded-lg shadow-lg border border-gray-400 lg:ml-5 mt-4 lg:mt-0">
             <h2 className="text-xl font-bold mb-4">Price</h2>
             <ul>
               {priceFilters.map((filter, index) => (
@@ -143,23 +154,6 @@ const Categories = () => {
                       className="mr-2"
                     />
                     {filter.label}
-                  </label>
-                </li>
-              ))}
-            </ul>
-            <h2 className="text-xl font-bold mb-4 mt-8"> Ratings</h2>
-            <ul>
-              {ratingFilters.map((filter, index) => (
-                <li key={index} className="mb-2">
-                  <label className="flex items-center">
-                    <input
-                      type="checkbox"
-                      value={filter.value}
-                      className="mr-2"
-                    />
-                    {[...Array(filter.count)].map((_, i) => (
-                      <img src={star} alt="star" key={i} className="w-4 h-4" />
-                    ))}
                   </label>
                 </li>
               ))}
@@ -182,6 +176,23 @@ const Categories = () => {
                 </li>
               ))}
             </ul>
+            <h2 className="text-xl font-bold mb-4 mt-8"> Ratings</h2>
+            <ul>
+              {ratingFilters.map((filter, index) => (
+                <li key={index} className="mb-2">
+                  <label className="flex items-center">
+                    <input
+                      type="checkbox"
+                      value={filter.value}
+                      className="mr-2"
+                    />
+                    {[...Array(filter.count)].map((_, i) => (
+                      <img src={star} alt="star" key={i} className="w-4 h-4" />
+                    ))}
+                  </label>
+                </li>
+              ))}
+            </ul>
           </aside>
           <section
             className="flex-1 ml-0 lg:ml-8 mt-8 lg:mt-0 p-4 lg:p-0"
@@ -196,7 +207,10 @@ const Categories = () => {
           >
             <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
               <div className="mr-auto place-self-center lg:col-span-7 lg:ml-16">
-                <h1 className="max-w-2xl mb-4 text-4xl font-semibold tracking-tight leading-none md:text-4xl xl:text-6xl text-[#1E1E1E]">
+                <h1
+                  className="max-w-2xl mb-4 text-4xl font-semibold tracking-tight leading-none md:text-4xl xl:text-5xl text-[#1E1E1E] "
+                  style={{ lineHeight: "1.1" }}
+                >
                   Spark Your Savings on Electronics!
                 </h1>
                 <p className="max-w-2xl mb-6 text-[#414141] lg:mb-8 md:text-lg lg:text-xl font-semibold">
@@ -216,14 +230,14 @@ const Categories = () => {
           </section>
         </div>
         <div className="lg:ml-72 mt-8 lg:mt-0 relative lg:bottom-72 ">
-          <ul className="flex flex-wrap justify-center lg:justify-start lg:ml-5 gap-4 lg:gap-12 pt-10 ">
+          <ul className="flex flex-wrap justify-center lg:justify-start lg:ml-5 gap-4 lg:gap-8 pt-10 ">
             {categories.map((category, index) => (
               <li key={index}>
                 <button
                   onClick={() => handleToggle(category)}
-                  className={`text-lg font-semibold py-1 px-3  ${
+                  className={`text-lg  py-1 px-3  ${
                     activeCategory === category
-                      ? "text-blue-600  border-b-2 border-blue-600"
+                      ? "text-[#775BE5]  border-b-2 border-[#775BE5]"
                       : "text-[#000000] "
                   }`}
                 >
@@ -241,41 +255,54 @@ const Categories = () => {
             >
               {products
                 .filter((product) => product.category === category)
-                .map((product, index) => (
-                  <Link
-                  to='/productPage'
-                    key={index}
-                    className="bg-white p-4 rounded-3xl shadow-lg"
+                .map((product, prodIndex) => (
+                  <div
+                    key={prodIndex}
+                    className="bg-white p-4 rounded-3xl shadow-lg relative"
                   >
-                    <img
-                      src={product.image}
-                      alt={product.title}
-                      className="w-full h-48 object-cover rounded-3xl"
-                    />
-                    <div className="flex flex-col mt-4 ">
-                      <p className="font-bold">
+                    <div className="relative">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="w-full h-48 object-cover rounded-3xl"
+                      />
+                      <button
+                        onClick={() => handleClick(prodIndex)}
+                        className="absolute top-3 right-4 text-2xl"
+                      >
+                        {filledHearts[prodIndex] ? (
+                          <AiFillHeart className="text-red-500 " />
+                        ) : (
+                          <FaHeart className="text-white" />
+                        )}
+                      </button>
+                    </div>
+                    <div className="flex flex-col mt-4">
+                      <p className=" text-[#878F9A]">
                         Category{" "}
-                        <span className="text-[#5356FB]">
+                        <span className="text-[#5356FB] font-semibold">
                           {product.category}
                         </span>
                       </p>
                       <h1 className="text-[#374557] text-2xl font-bold mt-2">
                         {product.title}
                       </h1>
-                      <p className="text-[#878F9A] text-xl mt-2">
-                        {product.description}
-                      </p>
-                      <h1 className="text-[#5356FB] font-bold text-xl mt-2">
-                        {product.newPrice}{" "}
-                        <span className="text-[#EB5757] line-through">
-                          {product.oldPrice}
-                        </span>
-                      </h1>
-                      <button className="px-5 py-3 mt-4 text-base font-medium w-full lg:w-28 text-white rounded-3xl bg-[#F539F8]">
+                      <div className="border border-gray-300 rounded-xl p-2 mt-3">
+                        <p className="text-[#878F9A] font-normal text-base mt-1">
+                          {product.description}
+                        </p>
+                        <h1 className="text-[#5356FB] font-bold text-base mt-1">
+                          {product.newPrice}{" "}
+                          <span className="text-[#EB5757] ml-1 font-medium line-through">
+                            {product.oldPrice}
+                          </span>
+                        </h1>
+                      </div>
+                      <button className="px-5 py-3 mt-4 text-base font-medium w-full lg:w-28 text-white rounded-3xl bg-[#F539F8] mb-3">
                         Get Now
                       </button>
                     </div>
-                  </Link>
+                  </div>
                 ))}
             </div>
           ))}

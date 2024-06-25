@@ -44,7 +44,7 @@ const Wishlist = () => {
 
   return (
     <>
-      <div className="px-4 sm:px-8 md:px-16 lg:px-28 xl:px-32 bg-[#DEDFF3] ">
+      <div className="px-4 sm:px-8 md:px-16 lg:px-28  xl:px-32 bg-[#DEDFF3] ">
         <div className="flex justify-between p-3 text-2xl">
           <h1 className="text-[#374557] font-semibold">Wishlist</h1>
           <p className="text-[#5356FB] font-semibold">{items.length} items</p>
@@ -52,12 +52,12 @@ const Wishlist = () => {
         {items.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col md:flex-row gap-5 mt-5 relative lg:flex-row bg-white p-5 rounded-2xl"
+            className="flex flex-col  md:flex-row gap-5 mt-5 relative lg:flex-row bg-[#EBE4FF] border border-white p-5 rounded-2xl"
           >
-            <div className="flex-shrink-0 w-full sm:w-32 md:w-40 lg:w-auto">
+            <div className="flex-shrink-0 w-full sm:w-32 md:w-40 lg:w-auto ">
               <img src={item.image} alt={item.name} className="w-full" />
             </div>
-            <div className="flex flex-col gap-2 flex-grow">
+            <div className="flex flex-col gap-2 flex-grow mt-2">
               <h1 className="bg-[#5356FB] w-max rounded-md text-white px-2">
                 {item.name}
               </h1>
@@ -77,7 +77,7 @@ const Wishlist = () => {
                 alt=""
               />
               <Link to="/cart">
-                <button className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-800 lg:w-28 md:w-28  w-60  rounded-2xl h-9 text-white mt-2 md:mt-0 lg:absolute lg:right-3 lg:top-20 ">
+                <button className="bg-gradient font-semibold lg:w-32 md:w-28  w-60  rounded-2xl h-9 text-white mt-2 md:mt-0 lg:absolute lg:right-3 lg:top-20 ">
                   Add to cart
                 </button>
               </Link>

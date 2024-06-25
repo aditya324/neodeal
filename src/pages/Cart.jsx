@@ -46,7 +46,7 @@ const Cart = () => {
     <>
       <div className="bg-[#DEDFF3] p-2">
         <div
-          className="flex justify-between border-white p-4 lg:w-9/12 w-11/12 md:w-2/3 lg:ml-64 ml-auto mr-auto mt-5 font-semibold rounded-3xl text-base"
+          className="flex justify-between border border-white p-4 lg:w-9/12 w-11/12 md:w-2/3 lg:ml-64 ml-auto mr-auto mt-5 font-semibold rounded-3xl text-base"
           style={{
             background:
               "linear-gradient(90deg, rgba(206,125,240,1) 0%, rgba(192,193,255,1) 69%)",
@@ -61,7 +61,7 @@ const Cart = () => {
         </div>
         <div className="flex flex-col lg:flex-row bg-[#DEDFF3]">
           <div>
-            <h1 className="text-2xl absolute left-12 lg:left-24 text-[#374557] top-40 lg:top-28 font-semibold">
+            <h1 className="text-2xl absolute left-12 lg:left-24 text-[#374557] top-44 lg:top-28 font-semibold">
               Cart
             </h1>
             <ol className="relative border-l-2 border-[#5356FB] ml-12 lg:ml-20 mt-16 lg:mt-10">
@@ -91,17 +91,18 @@ const Cart = () => {
               </li>
             </ol>
           </div>
-          <div className="flex flex-col justify-around mt-7 lg:flex-row lg:w-full">
-            <div className="px-4 sm:px-8 md:px-16 lg:px-28 xl:px-32 lg:w-full">
+
+          <div className="flex flex-col justify-around mt-7 lg:flex-row lg:w-full lg:ml-5 lg:px-10 ">
+            <div className="px-4 sm:px-8  lg:w-11/12 ">
               {items.map((item) => (
                 <div
                   key={item.id}
-                  className="flex flex-col md:flex-row gap-5 mt-5 relative lg:flex-row  bg-white p-3 rounded-2xl"
+                  className="flex flex-col md:flex-row gap-5 mt-5 relative lg:flex-row   p-3 rounded-2xl bg-[#EBE4FF] border border-white shadow "
                 >
                   <div className="flex-shrink-0 w-full sm:w-32 md:w-40 lg:w-auto">
                     <img src={item.image} alt={item.name} className="w-full" />
                   </div>
-                  <div className="flex flex-col gap-2 flex-grow">
+                  <div className="flex flex-col gap-2 flex-grow mt-2">
                     <h1 className="bg-[#5356FB] w-max rounded-md text-white px-2">
                       {item.name}
                     </h1>
@@ -116,7 +117,7 @@ const Cart = () => {
                   <div className="flex items-center justify-end lg:mb-0 mb-10">
                     {/* <ImCross className="text-[#5356FB] font-light cursor-pointer absolute right-2 top-2" /> */}
                     <img
-                      className="text-[#5356FB] font-light cursor-pointer absolute right-2 top-2 lg:block md:block hidden h-3"
+                      className="text-[#5356FB] font-light cursor-pointer absolute right-3 top-3 lg:block md:block hidden h-3"
                       src={cross}
                       alt=""
                     />
@@ -124,7 +125,8 @@ const Cart = () => {
                 </div>
               ))}
             </div>
-            <div className=" w-full lg:w-1/4 px-4 sm:px-8 md:px-16 lg:px-4 lg:mr-28 xl:px-8 bg-white lg:h-80 rounded-lg lg:mt-6 mt-5">
+
+            {/* <div className=" w-full lg:w-1/4 px-4 sm:px-8 md:px-16 lg:px-4 lg:mr-28 xl:px-8 bg-white lg:h-80 rounded-2xl lg:mt-5 mt-5">
               <div>
                 <h1 className="text-[#374557] font-semibold text-center lg:text-left lg:mt-3">
                   Order Summary
@@ -154,10 +156,47 @@ const Cart = () => {
                 <p>₹ 6,06,840/- </p>
               </div>
               <Link to="/payment" className="mt-5 flex justify-center">
-                <button className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-800 lg:w-52 md:w-28 w-60 rounded-2xl h-8 text-white mt-2 md:mt-0">
+                <button className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-800 lg:w-52 md:w-28 w-60 rounded-2xl h-8 text-white mt-2 md:mt-0 lg:mb-0 mb-5">
                   Buy now
                 </button>
-              </Link>
+              </div>
+            </div> */}
+            <div class="max-w-sm px-6 py-3 w-full bg-[#EBE4FF] border border-white rounded-2xl shadow  lg:w-full my-5 h-80 lg:mr-10 lg:ml-0 md:ml-10">
+              <h5 class="mb-2 text-xl font-semibold  text-gray-900 ">
+                Order Summary
+              </h5>
+
+              <div className="flex justify-between items-center mb-2">
+                <p>Total MRP</p> <p className="font-semibold">₹ 66,480 </p>
+              </div>
+
+              <div className="flex justify-between items-center mb-2">
+                <p>Discount</p> <p className="font-semibold">20% </p>
+              </div>
+
+              <div className="flex justify-between items-center mb-2">
+                <p>Shipping fee</p> <p className="font-semibold">-- </p>
+              </div>
+
+              <div className="flex justify-between items-center mb-2">
+                <p>Platform fee</p> <p className="font-semibold">--</p>
+              </div>
+
+              <div className="flex justify-center items-center ">
+                <p>-------------------------------------</p>
+              </div>
+
+              <div className="flex justify-between items-center">
+                <p className="font-semibold text-[#5356FB]">Total</p>{" "}
+                <p className="font-semibold text-[#5356FB]">₹ 66,840/-</p>
+              </div>
+
+              <button
+                type="submit"
+                class="w-full mt-5 text-center text-white bg-gradient focus:ring-4 focus:outline-none font-medium text-sm px-5 py-2.5 rounded-3xl"
+              >
+                Buy Now
+              </button>
             </div>
           </div>
         </div>

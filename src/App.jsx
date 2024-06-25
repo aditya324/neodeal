@@ -12,24 +12,26 @@ import LoginEmail from "./pages/LoginEmail";
 import LoginOtp from "./pages/LoginOtp";
 import ForgotPassword from "./pages/ForgotPassword";
 import Orders from "./pages/Orders";
-import Address from "./pages/Address"; 
+import Address from "./pages/Address";
 import Payment from "./pages/Payment";
 import Cart from "./pages/Cart";
 import Categories from "./pages/Categories";
 import Wishlist from "./pages/Wishlist";
 import Profile from "./pages/Profile";
-import Product from './pages/Product'
-import PersonalInfo from './pages/PersonalInfo';
-import Reviews from './pages/Reviews'
-import YourScheme from './pages/YourScheme';
-import Navbar from './components/Navbar';
-import Spin from './pages/Spin';
+import Product from "./pages/Product";
+import PersonalInfo from "./pages/PersonalInfo";
+import Reviews from "./pages/Reviews";
+import YourScheme from "./pages/YourScheme";
+import Navbar from "./components/Navbar";
+import Spin from "./pages/Spin";
+import Cancellation from "./pages/Cancellation";
+import TrackingOrder from "./pages/TrackingOrder";
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Layout/>}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="schemes" element={<SchemesPage />} />
           <Route path="login" element={<Login />} />
@@ -46,11 +48,13 @@ function App() {
           <Route path="categories" element={<Categories />} />
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="profile" element={<Profile />} />
-          <Route path='productPage' element={<Product/>}/>
-          <Route path='personalInfo' element={<PersonalInfo/>}/>
-          <Route path='reviews' element={<Reviews/>}/>
-          <Route path='yourScheme' element={<YourScheme/>}/>
-          <Route path='spin' element={<Spin/>}/>
+          <Route path="cancellation" element={<Cancellation />} />
+          <Route path="trackingorder" element={<TrackingOrder />} />
+          <Route path="productPage" element={<Product />} />
+          <Route path="personalInfo" element={<PersonalInfo />} />
+          <Route path="reviews" element={<Reviews />} />
+          <Route path="yourScheme" element={<YourScheme />} />
+          <Route path="spin" element={<Spin />} />
         </Route>
       </Routes>
     </Router>

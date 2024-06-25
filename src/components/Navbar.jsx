@@ -207,7 +207,7 @@ function Navbar() {
                 <li className="hover:text-[#F8A926]">
                   <Link
                     to="/schemes"
-                    className="py-2 px-3 rounded lg:p-0 text-white hover:text-[#F8A926] flex gap-2"
+                    className="py-2 px-3 rounded md:p-0 text-white hover:bg-gray-700 hover:text-white flex gap-2"
                   >
                     <RiDiscountPercentFill
                       className="hover:text-[#F8A926]"

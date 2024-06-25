@@ -20,7 +20,6 @@ const ProductPage = () => {
   const [openSpecification, setOpenSpecification] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
 
-
   const [mainImage, setMainImage] = useState(phn1);
   const handleChangeImage = (newImage) => {
     setMainImage(newImage);
@@ -51,57 +50,57 @@ const ProductPage = () => {
   return (
     <div className="bg-gray-200 lg:px-32 px-3 py-5">
       <div className="lg:flex gap-5">
-      <div className="lg:w-1/2 sm:h-96 border bg-white rounded-3xl sm:flex lg:max-xl:w-[98%]">
-        <div className="sm:mt-10 mt-5">
-          <div
-            className="sm:w-36 w-20 sm:h-10 bg-cover bg-center bg-no-repeat text-center py-2.5 text-white font-semibold text-sm leading-4 relative"
-            style={{
-              backgroundImage: `url(${scheme})`,
-            }}
-          >
-            <p>Scheme</p>
+        <div className="lg:w-1/2 sm:h-96 border bg-white rounded-3xl sm:flex lg:max-xl:w-[98%]">
+          <div className="sm:mt-10 mt-5">
+            <div
+              className="sm:w-36 w-20 sm:h-10 bg-cover bg-center bg-no-repeat text-center py-2.5 text-white font-semibold text-sm leading-4 relative"
+              style={{
+                backgroundImage: `url(${scheme})`,
+              }}
+            >
+              <p>Scheme</p>
+            </div>
+            <p className="mt-2 ml-2 text-red-500 sm:font-bold sm:text-sm leading-4">
+              <span>12 HR </span>
+              <span> 30 MIN </span>
+              <span> 60 SEC </span>
+            </p>
           </div>
-          <p className="mt-2 ml-2 text-red-500 sm:font-bold sm:text-sm leading-4">
-            <span>12 HR </span>
-            <span> 30 MIN </span>
-            <span> 60 SEC </span>
-          </p>
+          <img className="sm:h-96 sm:w-2/3" src={mainImage} alt="Main" />
+          <div
+            onClick={handleClick}
+            className="cursor-pointer text-2xl sm:mt-10 sm:ml-18 sm:mb-0 ml-2 mb-2"
+          >
+            {isFilled ? <AiFillHeart className="text-red-500" /> : <CiHeart />}
+          </div>
         </div>
-        <img className="sm:h-96 sm:w-2/3" src={mainImage} alt="Main" />
-        <div
-          onClick={handleClick}
-          className="cursor-pointer text-2xl sm:mt-10 sm:ml-18 sm:mb-0 ml-2 mb-2"
-        >
-          {isFilled ? <AiFillHeart className="text-red-500" /> : <CiHeart />}
-        </div>
-      </div>
-      <div className="flex lg:flex-col lg:w-1/2 lg:mt-0 gap-5 mt-3">
-        <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
-          <img
-            src={phn1}
-            alt="Phone 1"
-            className="h-28 mx-auto object-cover cursor-pointer"
-            onClick={() => handleChangeImage(phn1)}
-          />
-        </div>
-        <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
-          <img
-            src={phn2}
-            alt="Phone 2"
-            className="h-28 mx-auto object-cover cursor-pointer"
-            onClick={() => handleChangeImage(phn2)}
-          />
-        </div>
-        <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
-          <img
-            src={phn3}
-            alt="Phone 3"
-            className="h-28 mx-auto object-cover cursor-pointer"
-            onClick={() => handleChangeImage(phn3)}
-          />
+        <div className="flex lg:flex-col lg:w-1/2 lg:mt-0 gap-5 mt-3">
+          <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
+            <img
+              src={phn1}
+              alt="Phone 1"
+              className="h-28 mx-auto object-cover cursor-pointer"
+              onClick={() => handleChangeImage(phn1)}
+            />
+          </div>
+          <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
+            <img
+              src={phn2}
+              alt="Phone 2"
+              className="h-28 mx-auto object-cover cursor-pointer"
+              onClick={() => handleChangeImage(phn2)}
+            />
+          </div>
+          <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
+            <img
+              src={phn3}
+              alt="Phone 3"
+              className="h-28 mx-auto object-cover cursor-pointer"
+              onClick={() => handleChangeImage(phn3)}
+            />
+          </div>
         </div>
       </div>
-    </div>
       {/* -------------------------- product description -----------------------------------  */}
       <div className="sm:w-2/3 mt-8">
         <h2 className="font-semibold sm:text-2xl text-md">
