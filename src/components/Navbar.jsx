@@ -273,12 +273,15 @@ function Navbar() {
                   <NavLink
                     to="/wishlist"
                     className={({ isActive }) =>
-                      `  ${isActive ? "text-[#F8A926]" : "text-white"} ${
-                        isActive ? "bg-transparent" : ""
-                      }  py-2 px-3 rounded lg:p-0  flex items-center`
+                      `py-2 px-3 rounded lg:p-0 flex items-center ${
+                        isActive
+                          ? "text-[#F8A926] bg-transparent"
+                          : "text-white"
+                      }`
                     }
                   >
-                    <GoHeartFill className="text-white mr-3" /> Wishlist
+                    <GoHeartFill className="mr-3" size={20} />
+                    Wishlist
                   </NavLink>
                 </li>
                 <li className="block lg:hidden">
@@ -291,7 +294,7 @@ function Navbar() {
                     }
                     onClick={handleDropdownToggle}
                   >
-                    <FaUser className="text-white mr-3" />
+                    <FaUser className=" mr-3" />
                     Profile <span className="text-xl">▾</span>
                   </NavLink>
                   <div
