@@ -2,12 +2,17 @@ import React from "react";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import bg from '../assets/abtus.jpg';
 import logo from '../assets/footer logo.png';
+import { useNavigate } from "react-router-dom";
 
 const AboutUs = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-gray-300 min-h-screen xl:px-32 px-3 py-5">
       <div className="mt-5">
-        <FaArrowLeftLong className="text-2xl" />
+        <button onClick={() => navigate(-1)}>
+          <FaArrowLeftLong className="text-2xl" />
+        </button>
       </div>
       <div className="my-5 flex lg:flex-row flex-col gap-5 w-full">
         <div
