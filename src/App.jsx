@@ -24,6 +24,10 @@ import Reviews from "./pages/Reviews";
 import YourScheme from "./pages/YourScheme";
 import Navbar from "./components/Navbar";
 import Spin from "./pages/Spin";
+import AboutUs from "./pages/About us";
+import ConsumerPolicy from "./pages/ConsumerPolicy";
+import Help from "./pages/Help";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 function App() {
   return (
@@ -50,6 +54,10 @@ function App() {
         <Route path="reviews" element={<Reviews />} />
         <Route path="yourScheme" element={<YourScheme />} />
         <Route path="spin" element={<Spin />} />
+        <Route path="aboutUs" element={<AboutUs />} />
+        <Route path="consumerPolicy" element={<ConsumerPolicy />} />
+        <Route path="helpCenter" element={<Help />} />
+        <Route path="privacyPolicy" element={<PrivacyPolicy />} />
       </Route>
     </Routes>
   );

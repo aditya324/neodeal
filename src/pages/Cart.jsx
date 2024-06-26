@@ -105,7 +105,6 @@ const Cart = () => {
                 <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white ">
                   <FaShoppingCart className="w-4 h-4 text-blue-800 " />
                 </span>
-
                 <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 ">
                   Cart
                 </h3>
@@ -115,7 +114,6 @@ const Cart = () => {
                 <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white  ">
                   <FaAddressCard className="w-4 h-4 text-blue-800 " />
                 </span>
-
                 <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
                   Address
                 </h3>
@@ -125,7 +123,6 @@ const Cart = () => {
                 <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white ">
                   <MdPayment className="w-4 h-4 text-blue-800 " />
                 </span>
-
                 <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
                   Payment
                 </h3>
@@ -229,17 +226,12 @@ const Cart = () => {
                 <p>₹ 6,06,840/- </p>
 
               </div>
-
-              <Link to="/payment" className="mt-5 flex justify-center">
-
+              <div className="mt-5 flex justify-center">
                 <button className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-800 lg:w-52 md:w-28 w-60 rounded-2xl h-8 text-white mt-2 md:mt-0 lg:mb-0 mb-5">
 
                   Buy now
-
                 </button>
-
               </div>
-
             </div> */}
 
             <div class="max-w-sm px-6 py-3 w-full bg-[#EBE4FF] border border-white rounded-2xl shadow  lg:w-full my-5 h-80 lg:mr-10 lg:ml-0 md:ml-10">

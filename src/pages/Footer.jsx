@@ -1,5 +1,4 @@
 import React from "react";
-// import edmentor from "../assets/edmentor.png";
 import { VscSend } from "react-icons/vsc";
 import { RiInstagramFill } from "react-icons/ri";
 import { FaFacebookSquare } from "react-icons/fa";
@@ -7,20 +6,26 @@ import Logo from "../assets/footer logo.png";
 import { IoMdMail } from "react-icons/io";
 import { FaXTwitter } from "react-icons/fa6";
 import { IoLogoWhatsapp } from "react-icons/io";
+import { Link } from "react-router-dom";
 
-import footer from "../assets/logo.png";
 const Footer = () => {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", 
+    });
+  };
+
   return (
     <footer className="bg-[#1E1E1E] xl:h-96 lg:py-10 xl:px-32 lg:px-16 md:px-10 px-3 py-5 ">
-      {/* <div className="container mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 lg:gap-10"> */}
       <div className="mx-auto flex flex-wrap justify-between">
         <div className="text-gray-500 lg:w-2/5 w-full">
           <div className="flex items-center w-56 mb-3 lg:mr-0 mr-3 h-16">
             <img src={Logo} className="mr-2 w-fullobject-contain" alt="Logo" />
           </div>
           <p className="text-[#BCBCBC] leading-7 text-base mt-7 font-normal">
-            Address Ipsum has been the industry's dummy text to use as content.n
-            the industry's standard dummy text ever since the 1500s, when an
+            Address Ipsum has been the industry's dummy text to use as content.
+            The industry's standard dummy text ever since the 1500s, when an
             unknown printer took a galley of type and scrambled it to make a
             type specimen book. It has survived not only five centuries, 
           </p>
@@ -31,14 +36,25 @@ const Footer = () => {
         </div>
 
         <div className="lg:w-1/6 w-full">
-          {/* <p className="text-sm font-semibold text-white ">Other Pages</p> */}
-          <ul className="text-[#BCBCBC] lg:space-y-8 lg:mt-0 mt-5 lg:ml-3 lg:pl-10">
-            <li>About Us</li>
-            <li>Contact Us</li>
-            <li>Consumer Policy</li>
-            <li>Help center</li>
-            <li>Privacy Policy</li>
-          </ul>
+          <div className="lg:ml-3 lg:pl-10 mt-5 lg:mt-0">
+            <ul className="text-[#BCBCBC] space-y-5 lg:space-y-8">
+              <li onClick={scrollToTop}>
+                <Link to="/aboutUs">About Us</Link>
+              </li>
+              <li onClick={scrollToTop}>
+                <Link to="/">Contact Us</Link>
+              </li>
+              <li onClick={scrollToTop}>
+                <Link to="/consumerPolicy">Consumer Policy</Link>
+              </li>
+              <li onClick={scrollToTop}>
+                <Link to="/helpCenter">Help Center</Link>
+              </li>
+              <li onClick={scrollToTop}>
+                <Link to="/privacyPolicy">Privacy Policy</Link>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <div className="lg:w-2/5 w-full lg:pl-16 lg:mt-0 mt-5">
@@ -58,17 +74,17 @@ const Footer = () => {
             </button>
           </div>
           <p className=" text-[#BCBCBC] lg:leading-7 my-2 font-normal text-base">
-            Address Ipsum has been the industry's dummy text to use as content.n
-            the industry's standard dummy text ever since the 1500s, when an
+            Address Ipsum has been the industry's dummy text to use as content.
+            The industry's standard dummy text ever since the 1500s, when an
             unknown printer
           </p>
 
           <div className="flex space-x-1">
-          <a
+            <a
               href="#"
               className="shadow p-2 inline-flex items-center justify-center text-white"
             >
-              <FaXTwitter/>
+              <FaXTwitter />
             </a>
             <a
               href="#"
@@ -102,4 +118,5 @@ const Footer = () => {
     </footer>
   );
 };
+
 export default Footer;
