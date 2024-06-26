@@ -377,26 +377,30 @@ const PurpleSlider = () => {
   };
 
   return (
-    <div className="bg-custom-blue w-full h-80 p-4 overflow-x-hidden">
-      <p className="text-white relative top-12 left-10 text-xl mb-3 font-semibold">All Live Schemes</p>
-      <div className="flex justify-end items-center gap-2 mb-4 lg:mr-8">
-        <button onClick={() => sliderRef.current.slickPrev()}>
-          <div className="bg-[#5356FB] p-3 rounded-full">
-            <IoIosArrowBack className="text-white" />
-          </div>
-        </button>
-        <button onClick={() => sliderRef.current.slickNext()}>
-          <div className="bg-[#5356FB] p-3 rounded-full">
-            <IoIosArrowForward className="text-white" />
-          </div>
-        </button>
+    <div className="bg-custom-blue w-full h-80 p-4 overflow-hidden">
+     <div className='flex justify-between items-center mb-4 lg:flex-row  flex-col md:flex-row '>
+  <p className="text-white text-xl mb-3 font-semibold lg:ml-12 md:ml-5">All Live Schemes</p>
+  <div className="flex justify-end items-center gap-2 mb-4 lg:mr-20">
+    <button onClick={() => sliderRef.current.slickPrev()}>
+      <div className="bg-[#5356FB] p-3 rounded-full">
+        <IoIosArrowBack className="text-white" />
       </div>
-      <div className='w-11/12  ml-14'>
+    </button>
+    <button onClick={() => sliderRef.current.slickNext()}>
+      <div className="bg-[#5356FB] p-3 rounded-full">
+        <IoIosArrowForward className="text-white" />
+      </div>
+    </button>
+  </div>
+</div>
+
+    
+      <div className='lg:w-11/12  lg:ml-14 md:ml-0 ml-2 lg:px-0 md:px-0 px-8 rounded-2xl md:w-full   '>
 
       <Slider ref={sliderRef} {...settings}>
         {Trending.map((trend, index) => (
-          <div key={index} className="slick-slide-custom">
-            <div className="flex bg-custom-card w-96 rounded-lg overflow-hidden h-36 lg:py-1">
+          <div key={index} className="slick-slide-custom lg:px-0 md:px-5 lg:ml-0 ml-0 md:ml-1">
+            <div className="flex bg-custom-card lg:w-96 rounded-lg overflow-hidden h-36 lg:py-1">
               <div className="flex-1 p-4">
                 <h1 className="text-xl font-bold text-white">{trend.title}</h1>
                 <p className="mt-2 text-white text-base">{trend.desc}</p>
@@ -405,7 +409,7 @@ const PurpleSlider = () => {
                 <img
                   src={cwin}
                   alt="Image"
-                  className="w-32 h-20 object-contain mt-6 lg:ml-5"
+                  className="lg:w-32 lg:h-20 object-contain  lg:ml-5 h-20 lg:mr-0 md:mr-0 mr-20 lg:mt-0 md:mt-0 "
                 />
               </div>
             </div>

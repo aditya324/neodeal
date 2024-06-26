@@ -29,6 +29,7 @@ import ConsumerPolicy from "./pages/ConsumerPolicy";
 import Help from "./pages/Help";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 
+
 function App() {
   return (
     <Router>
@@ -59,6 +60,7 @@ function App() {
           <Route path='consumerPolicy' element={<ConsumerPolicy/>}/>
           <Route path='helpCenter' element={<Help/>}/>
           <Route path='privacyPolicy' element={<PrivacyPolicy/>}/>
+          
         </Route>
       </Routes>
     </Router>
