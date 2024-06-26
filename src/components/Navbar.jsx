@@ -52,12 +52,13 @@ function Navbar() {
                 type="button"
                 aria-controls="navbar-search"
                 aria-expanded={isMenuOpen ? "true" : "false"}
-                className="lg:hidden text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-lg text-sm p-2.5 me-1"
+                className="lg:hidden text-gray-500 focus:outline-none focus:ring-2 rounded-lg text-sm p-2.5 me-1"
                 onClick={handleMenuToggle}
               >
                 <IoMdSearch className="text-gray-500" size={30} />
                 <span className="sr-only">Search</span>
               </button>
+
               <div className="relative hidden lg:flex lg:gap-3">
                 <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                   <IoMdSearch className="text-gray-500" />
@@ -69,17 +70,26 @@ function Navbar() {
                   placeholder="Search Products"
                 />
 
-                <Link to="/wishlist">
-                  <div className="bg-[#37317C] h-9 w-9 rounded-full flex items-center justify-center">
-                    <GoHeartFill className="text-white" />
-                  </div>
-                </Link>
-                <Link to="/cart">
-                  <div className="bg-[#37317C] h-9 w-9 rounded-full flex items-center justify-center">
-                    <FaShoppingCart className="text-white" />
-                  </div>
-                </Link>
-                <Link
+                <NavLink to="/wishlist">
+                  {({ isActive }) => (
+                    <div className="bg-[#37317C] h-9 w-9 rounded-full flex items-center justify-center">
+                      <GoHeartFill
+                        className={isActive ? "text-[#F8A926]" : "text-white"}
+                      />
+                    </div>
+                  )}
+                </NavLink>
+
+                <NavLink to="/cart">
+                  {({ isActive }) => (
+                    <div className="bg-[#37317C] h-9 w-9 rounded-full flex items-center justify-center">
+                      <FaShoppingCart
+                        className={isActive ? "text-[#F8A926]" : "text-white"}
+                      />
+                    </div>
+                  )}
+                </NavLink>
+                <NavLink
                   className="flex items-center relative"
                   onClick={handleDropdownToggle}
                 >
@@ -118,7 +128,7 @@ function Navbar() {
                         </Link>
                       </li>
                       <li className="border-b ">
-                        <Link
+                        <NavLink
                           to="/wishlist"
                           className="flex items-center gap-4 px-4 py-2 border-b border-gray-100 hover:text-[#C342F9]"
                         >
@@ -126,7 +136,7 @@ function Navbar() {
                             <GoHeartFill className="text-[#9747FF]" size={20} />
                           </div>
                           <p className="text-lg">Wishlist</p>
-                        </Link>
+                        </NavLink>
                       </li>
                       <li className="border-b ">
                         <Link
@@ -163,17 +173,26 @@ function Navbar() {
                       </li>
                     </ul>
                   </div>
-                </Link>
+                </NavLink>
               </div>
               <button
                 type="button"
-                className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg lg:hidden focus:outline-none focus:ring-2 hover:bg-gray-700 focus:ring-gray-600"
+                className={`inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg lg:hidden focus:outline-none focus:ring-2 ${
+                  isMenuOpen ? "focus:ring-transparent" : "focus:ring-gray-600"
+                }`}
                 aria-controls="navbar-search"
                 aria-expanded={isMenuOpen ? "true" : "false"}
                 onClick={handleMenuToggle}
+                style={{
+                  backgroundColor: isMenuOpen ? "transparent" : "",
+                  border: isMenuOpen ? "none" : "",
+                }}
               >
                 <span className="sr-only">Open main menu</span>
-                <IoMenu size={50} />
+                <IoMenu
+                  size={70}
+                  className={isMenuOpen ? "text-[#F8A926]" : "text-gray-500"}
+                />
               </button>
             </div>
             <div
@@ -191,12 +210,12 @@ function Navbar() {
                   placeholder="Search..."
                 />
               </div>
-              <ul className="flex flex-col p-4 lg:p-0 mt-4 font-medium border rounded-lg lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 bg-black border-gray-700">
+              <ul className="flex flex-col p-4 lg:p-0 lg:items-center mt-4 font-medium border rounded-lg lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 bg-black border-gray-700">
                 <li className="group hover:text-[#F8A926]">
                   <NavLink
                     to="/"
                     className={({ isActive }) =>
-                      `py-2 px-3 rounded lg:bg-transparent lg:p-0 flex gap-0 ${
+                      `py-2 px-3 rounded lg:bg-transparent lg:p-0 flex lg:items-center gap-0 ${
                         isActive ? "text-[#F8A926]" : "text-white"
                       } ${isActive ? "bg-transparent" : ""}`
                     }
