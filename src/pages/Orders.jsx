@@ -192,14 +192,12 @@ const Orders = () => {
 
     <div className="mt-4">
       <p>How Would You Rate The Product?</p>
-      {/* Replace with your ReactStars component */}
-      <div className="flex items-center mt-2">
-        <span className="text-yellow-400 text-xl">&#9733;</span>
-        <span className="text-yellow-400 text-xl ml-1">&#9733;</span>
-        <span className="text-yellow-400 text-xl ml-1">&#9733;</span>
-        <span className="text-yellow-400 text-xl ml-1">&#9733;</span>
-        <span className="text-gray-400 text-xl ml-1">&#9733;</span>
-      </div>
+      <ReactStars
+        count={5}
+        onChange={ratingChanged}
+        size={40}
+        activeColor="#ffd700"
+      />
     </div>
     
     <div className="text-[#2572E6] underline text-base font-semibold mt-2">
