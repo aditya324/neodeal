@@ -33,14 +33,14 @@ const SchemesPage = () => {
     }}
   >
     <div className="flex flex-col lg:flex-row items-center justify-between px-5 lg:w-full xl:gap-10 lg:ml-10">
-      <div className="text-center lg:text-left md:text-left lg:mr-auto md:mr-80 lg:col-span-7 lg:ml-0 lg:my-10 my-0 md:my-16">
-        <p className="max-w-xl text-white md:text-lg lg:text-4xl font-semibold lg:mb-8 lg:mt-0 md:mt-0">
+      <div className="text-center lg:text-left md:text-left lg:mr-auto md:mr-80 lg:col-span-7 lg:ml-0 lg:my-10 my-0 md:my-16 ml-0 md:ml-32">
+        <p className="max-w-xl text-white  lg:text-4xl font-semibold lg:mb-8 lg:mt-0 md:mt-0 md:text-3xl">
           Buy any product from
         </p>
-        <h1 className="mb-5 text-3xl lg:text-7xl font-extrabold tracking-tight leading-none md:text-4xl text-white">
+        <h1 className="mb-5 text-3xl lg:text-7xl font-extrabold tracking-tight leading-none md:text-7xl text-white whitespace-nowrap">
           Hululu Scheme
         </h1>
-        <p className="max-w-xl text-white md:text-lg lg:text-4xl font-semibold mb-5">
+        <p className="max-w-xl text-white md:text-3xl lg:text-4xl font-semibold mb-5">
           and get a chance to <br /> win a CAR !!
         </p>
         <a
@@ -50,7 +50,7 @@ const SchemesPage = () => {
           View Products
         </a>
       </div>
-      <div className="flex flex-col lg:h-96 items-center lg:items-start lg:w-auto lg:ml-10 mt-5 lg:mt-0  relative lg:bottom-0 md:bottom-80 lg:left-0 md:left-28">
+      <div className="flex flex-col lg:h-96 items-center lg:items-start lg:w-auto lg:ml-10 mt-5 lg:mt-0  relative lg:bottom-0 md:bottom-80 lg:left-0 md:left-44">
         <img
           className="lg:w-full md:w-96 object-cover   "
           src={schmepageimg}

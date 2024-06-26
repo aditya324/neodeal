@@ -24,6 +24,10 @@ import Reviews from './pages/Reviews'
 import YourScheme from './pages/YourScheme';
 import Navbar from './components/Navbar';
 import Spin from './pages/Spin';
+import AboutUs from "./pages/About us";
+import ConsumerPolicy from "./pages/ConsumerPolicy";
+import Help from "./pages/Help";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 
 
 function App() {

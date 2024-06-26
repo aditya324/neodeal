@@ -12,8 +12,8 @@ const PopularCategories = () => {
 
   return (
     <>
-      <div className="lg:h-44 h-full w-full bg-[#DEDFF3] relative pb-10 ">
-        <div className="font-semibold text-xl text-[#374557] lg:ml-16 ml-32 mb-5 pt-8 md:ml-10 ">
+      <div className="lg:h-44 h-full md:w-full w-full bg-[#DEDFF3] relative pb-10 overflow-hidden  ">
+        <div className="font-semibold text-xl text-[#374557] lg:ml-16 ml-20 mb-5 pt-8 md:ml-10 ">
           <p>popular categories</p>
         </div>
         {/* <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 lg:ml-10 ml-20 lg:px-10 lg:mt-0 mt-5 lg:gap-0 md:gap-10  gap-8 md:ml-28">

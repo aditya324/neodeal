@@ -28,9 +28,9 @@ const Home = () => {
       backgroundRepeat: "no-repeat"
     }}
   >
-    <div className="lg:ml-0 md:ml-5 ml-6">
+    <div className="lg:ml-3 md:ml-5 ml-6">
       <p className="text-white font-semibold text-lg ">Buy any product from schemes and</p>
-      <p className="text-white lg:text-7xl font-extrabold my-2 text-4xl">WIN BIG!</p>
+      <p className="text-white lg:text-6xl font-extrabold my-2 whitespace-nowrap text-4xl">WIN BIG!</p>
       <p className="text-white font-medium w-44 lg:w-80 md:w-40">
         Each purchase of a product earns you a
         <span className="block"> unique number, unlocking the chance to</span>
