@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { GoHeartFill } from "react-icons/go";
-import MainIcon from "../assets/Main Icon.png";
+import MainIcon from "../assets/footer logo.png";
 import { IoMdSearch, IoMdHome } from "react-icons/io";
 import { RiDiscountPercentFill } from "react-icons/ri";
 import { HiViewGrid } from "react-icons/hi";
