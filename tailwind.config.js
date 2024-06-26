@@ -30,7 +30,6 @@ export default {
         
         "Custom-btn-bg": "linear-gradient(#3D0179, #7002DF)",
       },
-      
     },
   },
   plugins: [],
