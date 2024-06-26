@@ -66,10 +66,9 @@ const Cart = () => {
             </h1>
             <ol className="relative border-l-2 border-[#5356FB] ml-12 lg:ml-20 mt-16 lg:mt-10">
               <li className="mb-10 ml-6">
-                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white  ">
+                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white ">
                   <FaShoppingCart className="w-4 h-4 text-blue-800 " />
                 </span>
-                <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 ">
                 <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 ">
                   Cart
                 </h3>
@@ -77,25 +76,22 @@ const Cart = () => {
               <li className="mb-10 ml-6">
                 <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white  ">
                   <FaAddressCard className="w-4 h-4 text-blue-800 " />
-                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white  ">
-                  <FaAddressCard className="w-4 h-4 text-blue-800 " />
                 </span>
-                <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
                 <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
                   Address
                 </h3>
               </li>
               <li className="ml-6">
-                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white  ">
+                <span className="absolute flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full -left-3 ring-8 ring-white ">
                   <MdPayment className="w-4 h-4 text-blue-800 " />
                 </span>
-                <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
                 <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
                   Payment
                 </h3>
               </li>
             </ol>
           </div>
+
           <div className="flex flex-col justify-around mt-7 lg:flex-row lg:w-full lg:ml-5 lg:px-10 ">
             <div className="px-4 sm:px-8  lg:w-11/12 ">
               {items.map((item) => (
@@ -121,7 +117,7 @@ const Cart = () => {
                   <div className="flex items-center justify-end lg:mb-0 mb-10">
                     {/* <ImCross className="text-[#5356FB] font-light cursor-pointer absolute right-2 top-2" /> */}
                     <img
-                      className="text-[#5356FB] font-light cursor-pointer absolute right-2 top-2 lg:block md:block hidden h-3"
+                      className="text-[#5356FB] font-light cursor-pointer absolute right-3 top-3 lg:block md:block hidden h-3"
                       src={cross}
                       alt=""
                     />
@@ -159,11 +155,11 @@ const Cart = () => {
                 <h1>Total</h1>
                 <p>₹ 6,06,840/- </p>
               </div>
-              <Link to="/payment" className="mt-5 flex justify-center">
+              <div className="mt-5 flex justify-center">
                 <button className="bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-800 lg:w-52 md:w-28 w-60 rounded-2xl h-8 text-white mt-2 md:mt-0 lg:mb-0 mb-5">
                   Buy now
-                </button> 
-              </Link>
+                </button>
+              </div>
             </div> */}
             <div class="max-w-sm px-6 py-3 w-full bg-[#EBE4FF] border border-white rounded-2xl shadow  lg:w-full my-5 h-80 lg:mr-10 lg:ml-0 md:ml-10">
               <h5 class="mb-2 text-xl font-semibold  text-gray-900 ">

@@ -3,7 +3,7 @@ import { FaArrowLeftLong } from 'react-icons/fa6'
 
 const ConsumerPolicy = () => {
   return (
-    <div className="bg-gray-300 min-h-screen xl:px-32 px-3 py-5">
+    <div className="bg-gray-300  xl:px-32 px-3 py-5">
         <div className="mt-5 flex">
         <FaArrowLeftLong className="text-2xl" />
         <p className='ml-2 text-xl font-semibold'>Consumer policy</p>
