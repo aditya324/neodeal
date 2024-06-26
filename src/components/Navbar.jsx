@@ -13,7 +13,12 @@ import Logout from "../assets/Logout.png";
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserDropdownOpen, setIsUserDropdownOpen] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+
+  const handleCategoriesDropdownToggle = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -244,18 +249,21 @@ function Navbar() {
                     Schemes
                   </NavLink>
                 </li>
-                <li className="flex justify-center items-center hover:text-[#F8A926]">
+                <li className="flex flex-col justify-center items-center hover:text-[#F8A926]">
                   <button
                     id="dropdownNavbarLink"
                     data-dropdown-toggle="dropdownNavbar"
-                    className="flex items-center w-full gap-2 py-2 px-3 hover:text-[#F8A926] lg:hover:bg-transparent lg:border-0 lg:hover:text-[#F8A926] lg:p-0 lg:w-auto text-white focus:text-white hover:bg-gray-700"
+                    className="flex items-center w-full gap-2 py-2 px-3 lg:hover:bg-transparent lg:border-0 lg:hover:text-[#F8A926] lg:p-0 lg:w-auto text-white"
+                    onClick={handleCategoriesDropdownToggle}
                   >
                     <HiViewGrid size={25} />
                     All Categories <span className="text-xl">▾</span>
                   </button>
                   <div
                     id="dropdownNavbar"
-                    className="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44"
+                    className={`z-10 ${
+                      isDropdownOpen ? "block" : "hidden"
+                    } font-normal bg-white divide-y absolute divide-gray-100 rounded-lg shadow w-44`}
                   >
                     <ul
                       className="py-2 text-sm text-gray-700 font-semibold"
@@ -321,7 +329,7 @@ function Navbar() {
                     ref={dropdownRef}
                     className={`z-10 ${
                       isUserDropdownOpen ? "block" : "hidden"
-                    } font-normal divide-y divide-gray-100 rounded-md shadow w-44 absolute left-1/2 transform -translate-x-1/2 top-full -ml-24`}
+                    } font-normal divide-y divide-gray-100 rounded-md shadow w-44 absolute left-1/2 transform -translate-x-1/2 top-full -ml-28`}
                   >
                     <ul
                       className="py-2 text-sm bg-white absolute rounded-xl w-64"
