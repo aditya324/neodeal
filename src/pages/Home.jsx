@@ -31,23 +31,23 @@ const Home = () => {
     <div className="lg:ml-0 md:ml-5 ml-6">
       <p className="text-white font-semibold text-lg ">Buy any product from schemes and</p>
       <p className="text-white lg:text-7xl font-extrabold my-2 text-4xl">WIN BIG!</p>
-      <p className="text-white font-medium w-44 lg:w-80">
+      <p className="text-white font-medium w-44 lg:w-80 md:w-40">
         Each purchase of a product earns you a
         <span className="block"> unique number, unlocking the chance to</span>
         <span className="block">win lavish prizes.</span>
       </p>
 
-      <div className="flex lg:gap-10 gap-5 justify-start items-center">
+      <div className="flex lg:gap-10 gap-5 justify-start items-center lg:mb-0 mb-0 md:mb-4 lg:mt-0 mt-0 md:mt-2">
         <button className="bg-[#F539F8] text-white lg:my-5 lg:px-5 lg:py-3 px-4 py-2 rounded-full md:py-1 md:px-1 md:w-28 ">
           Buy Now
         </button>
-        <a href="" className="text-white underline md:w-10 lg:w-20">
+        <a href="" className="text-white underline md:w-20 lg:w-20 ">
           Learn More
         </a>
       </div>
     </div>
     <div className="lg:mb-0 mb-0 md:mb-10">
-      <img src={winnbg} alt="" className="w-full h-auto " />
+      <img src={winnbg} alt="" className="lg:w-full lg:h-auto w-full h-full md:w-60 md:h-32 " />
       <div className="text-center font-semibold text-white">
         <p>
           Its as simple as.. Buy a product,<br />

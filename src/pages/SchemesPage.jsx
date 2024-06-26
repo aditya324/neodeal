@@ -63,13 +63,16 @@ const SchemesPage = () => {
   </div>
 </div>
 <div>
-  <div className="flex justify-center mb-1 lg:mt-10 md:mt-10 mt-5">
+  <div className="flex justify-center  lg:mt-10 md:mt-10 mt-5">
     <div className="w-64 sm:w-72 md:w-80 lg:w-96 bg-gray-200 rounded-full h-2.5 ">
       <div className="bg-blue-600 h-2.5 rounded-full" style={{ width: '56%' }}></div>
     </div>
+    <p className="   text-white ml-3">
+  56%
+</p>
   </div>
 
-  <p className="absolute right-8 sm:right-1/4 md:right-1/3 lg:bottom-7 bottom-16  text-white md:">56%</p>
+  
 
   <p className="w-full text-center text-lg font-semibold text-[#374557]">Winner to be announced at 100%, <span className="text-blue-700">Hurry up</span> on schemes</p>
 </div>

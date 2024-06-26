@@ -316,7 +316,7 @@ const BestSellerCard = ({name ,style}) => {
     <div className='bg-[#DEDFF3]  lg:px-16 '>
       <div className="flex justify-between items-center mb-3 lg:mb-4 lg:flex-row  flex-col md:flex-row   " >
         <p className="font-semibold text-[#374557]  text-xl mt-5 lg:ml-0 ml-0 md:ml-10 md:mt-5">Best Seller</p>
-        <div className="flex justify-end items-center gap-2 lg:mr-8 lg:mt-0  mt-5 md:mt-8 md:mr-5">
+        <div className="flex justify-end items-center gap-2 lg:mr-8 lg:mt-5  mt-5 md:mt-8 md:mr-5">
           <button onClick={() => sliderRef.current.slickPrev()}>
             <div className="bg-[#5356FB] p-3 rounded-full">
               <IoIosArrowBack className="text-white" />
