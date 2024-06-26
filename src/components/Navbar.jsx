@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { GoHeartFill } from "react-icons/go";
 import MainIcon from "../assets/footer logo.png";
 import { IoMdSearch, IoMdHome } from "react-icons/io";
@@ -65,9 +65,10 @@ function Navbar() {
                 <input
                   type="text"
                   id="search-navbar"
-                  className="block w-full p-2 ps-10 text-sm text-gray-900 border rounded-lg focus:ring-blue-500 focus:border-blue-500 bg-white border-gray-600 placeholder-gray-400"
+                  className="block w-full p-2 ps-10 text-sm text-white border rounded-lg focus:ring-yellow-500 focus:border-yellow-500 bg-gray-800 border-gray-600 placeholder-gray-200"
                   placeholder="Search Products"
                 />
+
                 <Link to="/wishlist">
                   <div className="bg-[#37317C] h-9 w-9 rounded-full flex items-center justify-center">
                     <GoHeartFill className="text-white" />
@@ -186,35 +187,43 @@ function Navbar() {
                 <input
                   type="text"
                   id="search-navbar"
-                  className="block w-full p-2 ps-10 text-sm text-gray-900 border rounded-lg focus:border-blue-500 bg-gray-700 border-gray-600 placeholder-gray-400 focus:ring-blue-500"
+                  className="block w-full p-2 ps-10 text-sm text-white border rounded-lg focus:border-yellow-500 focus:ring-yellow-500 bg-gray-700 border-gray-600 placeholder-gray-400"
                   placeholder="Search..."
                 />
               </div>
               <ul className="flex flex-col p-4 lg:p-0 mt-4 font-medium border rounded-lg lg:space-x-8 rtl:space-x-reverse lg:flex-row lg:mt-0 lg:border-0 bg-black border-gray-700">
                 <li className="group hover:text-[#F8A926]">
-                  <Link
+                  <NavLink
                     to="/"
-                    className="py-2 px-3 text-white bg-blue-700 rounded lg:bg-transparent lg:p-0 lg:text-blue-500 flex gap-0 group-hover:text-[#F8A926]"
+                    className={({ isActive }) =>
+                      `py-2 px-3 rounded lg:bg-transparent lg:p-0 flex gap-0 ${
+                        isActive ? "text-[#F8A926]" : "text-white"
+                      } ${isActive ? "bg-transparent" : ""}`
+                    }
                     aria-current="page"
                   >
                     <IoMdHome
-                      className="text-white mr-1 group-hover:text-[#F8A926]"
+                      className="mr-1 group-hover:text-[#F8A926]"
                       size={25}
                     />
                     Home
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="hover:text-[#F8A926]">
-                  <Link
+                  <NavLink
                     to="/schemes"
-                    className="py-2 px-3 rounded lg:p-0 text-white hover:text-[#F8A926] flex gap-2"
+                    className={({ isActive }) =>
+                      ` ${isActive ? "text-[#F8A926]" : "text-white"} ${
+                        isActive ? "bg-transparent" : ""
+                      }py-2 px-3 rounded lg:p-0 hover:text-[#F8A926] flex gap-2`
+                    }
                   >
                     <RiDiscountPercentFill
                       className="hover:text-[#F8A926]"
                       size={25}
                     />
                     Schemes
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="flex justify-center items-center hover:text-[#F8A926]">
                   <button
@@ -261,22 +270,30 @@ function Navbar() {
                   </Link>
                 </li>
                 <li className="block lg:hidden">
-                  <Link
+                  <NavLink
                     to="/wishlist"
-                    className="py-2 px-3 rounded lg:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
+                    className={({ isActive }) =>
+                      `  ${isActive ? "text-[#F8A926]" : "text-white"} ${
+                        isActive ? "bg-transparent" : ""
+                      }  py-2 px-3 rounded lg:p-0  flex items-center`
+                    }
                   >
                     <GoHeartFill className="text-white mr-3" /> Wishlist
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="block lg:hidden">
-                  <Link
+                  <NavLink
                     to="/profile"
-                    className="py-2 px-3 rounded lg:p-0 text-white hover:bg-gray-700 hover:text-white flex items-center"
+                    className={({ isActive }) =>
+                      `  ${isActive ? "text-[#F8A926]" : "text-white"} ${
+                        isActive ? "bg-transparent" : ""
+                      } text-white   py-2 px-3 rounded lg:p-0  flex items-center`
+                    }
                     onClick={handleDropdownToggle}
                   >
                     <FaUser className="text-white mr-3" />
                     Profile <span className="text-xl">▾</span>
-                  </Link>
+                  </NavLink>
                   <div
                     id="userProfile"
                     ref={dropdownRef}
