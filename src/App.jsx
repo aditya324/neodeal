@@ -22,9 +22,9 @@ import Product from "./pages/Product";
 import PersonalInfo from "./pages/PersonalInfo";
 import Reviews from "./pages/Reviews";
 import YourScheme from "./pages/YourScheme";
-import Navbar from "./components/Navbar";
 import Spin from "./pages/Spin";
 import Cancellation from "./pages/Cancellation";
+import Cancellation2 from "./pages/Cancellation2";
 import TrackingOrder from "./pages/TrackingOrder";
 
 function App() {
@@ -49,6 +49,7 @@ function App() {
           <Route path="wishlist" element={<Wishlist />} />
           <Route path="profile" element={<Profile />} />
           <Route path="cancellation" element={<Cancellation />} />
+          <Route path="cancellation2" element={<Cancellation2 />} />
           <Route path="trackingorder" element={<TrackingOrder />} />
           <Route path="productPage" element={<Product />} />
           <Route path="personalInfo" element={<PersonalInfo />} />

@@ -29,7 +29,7 @@ const Cancellation = () => {
                 Order Id : <span>fqagqn340</span>
               </p>
               <p className="mt-2">
-                Date of Order : <span>11/2/24</span>
+                Date of Order : <span>11/2/24</span> 
               </p>
             </div>
           </div>
