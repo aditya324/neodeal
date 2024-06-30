@@ -6,10 +6,11 @@ import laptop from "../assets/laptop.png";
 import sound from "../assets/sound.png";
 import star from "../assets/star.png";
 import { RiArrowDropLeftLine, RiArrowDropRightLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
 import { AiFillHeart } from "react-icons/ai";
 import { FiHeart } from "react-icons/fi";
 import { FaHeart } from "react-icons/fa";
-import { Link } from "react-router-dom";
+>>>>>>>>> Temporary merge branch 2
 
 const categories = [
   "Electronics",

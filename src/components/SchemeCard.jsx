@@ -26,23 +26,23 @@ const SchemeCard = () => {
     <>
       <div>
         <div className="flex justify-start ml-20">
-          <p className="text-[#374557] font-bold lg:ml-20 text-xl pt-4">
+          <p className="text-[#374557] font-bold  text-xl pt-4">
             How Do Schemes Work?
           </p>
         </div>
-        <div className="bg-[#DEDFF3] w-full flex flex-wrap justify-center mt-8 px-4">
+        <div className="bg-[#DEDFF3] w-full flex flex-wrap justify-evenly mt-8 ">
           {Schemes.map((scheme) => {
             return (
               <div key={scheme.id} className="max-w-xs rounded overflow-hidden m-4 flex-shrink-0">
-                <div className="w-12 h-12 mx-auto mt-4 rounded-full overflow-hidden">
+                <div className="w-16 h-16 mx-auto mt-4 rounded-full overflow-hidden">
                   <img
                     src={scheme.img}
                     alt={scheme.text}
-                    className="w-full h-full object-cover bg-white p-2"
+                    className="w-full h-full object-cover bg-white p-4"
                   />
                 </div>
                 <div className="text-center px-6 py-2">
-                  <p className="text-[#374557] font-medium text-lg mb-1">
+                  <p className="text-[#374557] font-medium text-2xl mb-1">
                     {scheme.text}
                   </p>
                 </div>

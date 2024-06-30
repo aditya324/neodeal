@@ -13,6 +13,7 @@ import review3 from "../assets/review3.png";
 import profile from "../assets/profile.png";
 import scheme from "../assets/Rectangle 465.png";
 import { AiFillHeart } from "react-icons/ai";
+import { IoIosShareAlt } from "react-icons/io";
 
 const ProductPage = () => {
   const [openDescription, setOpenDescription] = useState(true);
@@ -48,59 +49,73 @@ const ProductPage = () => {
   };
 
   return (
-    <div className="bg-gray-200 lg:px-32 px-3 py-5">
-      <div className="lg:flex gap-5">
-        <div className="lg:w-1/2 sm:h-96 border bg-white rounded-3xl sm:flex lg:max-xl:w-[98%]">
-          <div className="sm:mt-10 mt-5">
-            <div
-              className="sm:w-36 w-20 sm:h-10 bg-cover bg-center bg-no-repeat text-center py-2.5 text-white font-semibold text-sm leading-4 relative"
-              style={{
-                backgroundImage: `url(${scheme})`,
-              }}
-            >
-              <p>Scheme</p>
+    <div className="bg-gray-200 xl:px-32 lg:px-16 px-3 py-5">
+      <div className="relative sm:static sm:flex sm:justify-between gap-3">
+        <div className="sm:w-11/12 lg:flex gap-5">
+          <div className="rounded-3xl border bg-white sm:flex sm:h-96 sm:justify-between md:w-full xl:w-1/2">
+            <div className="mt-5 sm:mt-10">
+              <div
+                className="bg-cover bg-center bg-no-repeat font-semibold leading-4 py-2.5 relative text-center text-sm text-white w-20 sm:w-36 sm:h-10"
+                style={{
+                  backgroundImage: `url(${scheme})`,
+                }}
+              >
+                <p>Scheme</p>
+              </div>
+              <p className="font-bold leading-4 ml-2 mt-2 text-red-500 text-sm xl:text-sm lg:text-xs">
+                <span>12 HR </span>
+                <span> 30 MIN </span>
+                <span> 60 SEC </span>
+              </p>
             </div>
-            <p className="mt-2 ml-2 text-red-500 sm:font-bold sm:text-sm leading-4">
-              <span>12 HR </span>
-              <span> 30 MIN </span>
-              <span> 60 SEC </span>
-            </p>
+            <img
+              className="lg:h-96 lg:w-2/3 object-cover"
+              src={mainImage}
+              alt="Main"
+            />
+            <div
+              onClick={handleClick}
+              className="cursor-pointer ml-2 mb-2 mr-5 sm:ml-18 sm:mb-0 sm:mt-10 text-2xl"
+            >
+              {isFilled ? (
+                <AiFillHeart className="text-red-500" />
+              ) : (
+                <CiHeart />
+              )}
+            </div>
           </div>
-          <img className="sm:h-96 sm:w-2/3" src={mainImage} alt="Main" />
-          <div
-            onClick={handleClick}
-            className="cursor-pointer text-2xl sm:mt-10 sm:ml-18 sm:mb-0 ml-2 mb-2"
-          >
-            {isFilled ? <AiFillHeart className="text-red-500" /> : <CiHeart />}
+          <div className="flex gap-5 mt-3 lg:flex-col lg:mt-0 lg:w-1/2">
+            <div className="bg-white h-28 rounded-lg sm:w-40 w-full">
+              <img
+                src={phn1}
+                alt="Phone 1"
+                className="cursor-pointer h-28 mx-auto object-cover"
+                onClick={() => handleChangeImage(phn1)}
+              />
+            </div>
+            <div className="bg-white h-28 rounded-lg sm:w-40 w-full">
+              <img
+                src={phn2}
+                alt="Phone 2"
+                className="cursor-pointer h-28 mx-auto object-cover"
+                onClick={() => handleChangeImage(phn2)}
+              />
+            </div>
+            <div className="bg-white h-28 rounded-lg sm:w-40 w-full">
+              <img
+                src={phn3}
+                alt="Phone 3"
+                className="cursor-pointer h-28 mx-auto object-cover"
+                onClick={() => handleChangeImage(phn3)}
+              />
+            </div>
           </div>
         </div>
-        <div className="flex lg:flex-col lg:w-1/2 lg:mt-0 gap-5 mt-3">
-          <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
-            <img
-              src={phn1}
-              alt="Phone 1"
-              className="h-28 mx-auto object-cover cursor-pointer"
-              onClick={() => handleChangeImage(phn1)}
-            />
-          </div>
-          <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
-            <img
-              src={phn2}
-              alt="Phone 2"
-              className="h-28 mx-auto object-cover cursor-pointer"
-              onClick={() => handleChangeImage(phn2)}
-            />
-          </div>
-          <div className="w-full sm:w-40 h-28 bg-white rounded-lg">
-            <img
-              src={phn3}
-              alt="Phone 3"
-              className="h-28 mx-auto object-cover cursor-pointer"
-              onClick={() => handleChangeImage(phn3)}
-            />
-          </div>
+        <div className="absolute flex h-10 items-center justify-center rounded-full text-white top-10 right-5 w-10 bg-[#37317C] sm:relative sm:top-auto sm:right-auto">
+          <IoIosShareAlt />
         </div>
       </div>
+
       {/* -------------------------- product description -----------------------------------  */}
       <div className="sm:w-2/3 mt-8">
         <h2 className="font-semibold sm:text-2xl text-md">
