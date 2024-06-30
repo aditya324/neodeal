@@ -62,7 +62,7 @@ const Cancellation = () => {
                 </div>
                 <div className="flex flex-col sm:flex-row items-center mt-2">
                   <label htmlFor="size" className="mr-2">
-                    Size:
+                    Size: 
                   </label>
                   <select
                     id="size"
