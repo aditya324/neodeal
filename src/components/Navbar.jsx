@@ -58,9 +58,6 @@ function Navbar() {
                 aria-controls="navbar-search"
                 aria-expanded={isMenuOpen ? "true" : "false"}
                 className="lg:hidden text-gray-500 focus:outline-none focus:ring-2 rounded-lg text-sm p-2.5 me-1"
-=======
-                className="lg:hidden text-gray-500 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 rounded-lg text-sm p-2.5 me-1"
->>>>>>> d549ea0fdf5e26edd3d5d7164b516cdef4363214
                 onClick={handleMenuToggle}
               >
                 <IoMdSearch className="text-gray-500" size={30} />
